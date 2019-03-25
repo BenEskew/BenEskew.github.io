@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Ben Eskew - Web Developer / Software Developer</title>
+        <title>Benjamin Eskew - Web Developer / Software Developer</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -315,14 +315,13 @@
         <script src="assets/js/lib.js"></script>
         <!-- Vue START -->
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
-        <!--<script src="https://cdn.jsdelivr.net/vue.resource/0.9.3/vue-resource.min.js"></script>-->
         <script src="assets/js/vue-filters.js"></script>
         <script type="text/javascript">
             //
 
             //
             //
-            var data = {
+            let data = {
                 current_time: moment(Date.now()).format('MM/DD/YYYY hh:mm:ss a'),
                 message: 'Welcome!',
                 message_event: null,
@@ -330,7 +329,7 @@
                 version: '0.1.0'
             };
 
-            var vm = new Vue({
+            let vm = new Vue({
                 el: '#app',
                 data: data,
 
@@ -339,11 +338,7 @@
                     document.getElementById('resume').style.display = 'none';
                     document.getElementById('contact').style.display = 'none';
 
-                    @if ($errors->has('message'))
-                        this.showContact();
-                    @else
-                        this.scrollToId('app');
-                    @endif
+                    this.scrollToId('app');
 
                 },
 
@@ -352,7 +347,7 @@
 
                         // current time
                         setInterval(function() {
-                            var a = moment(Date.now());
+                            let a = moment(Date.now());
                             data.current_time = a.format('MM/DD/YYYY hh:mm:ss a');
                         }, 1000);
 
