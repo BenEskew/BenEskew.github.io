@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Benjamin Eskew - Web Developer / Software Developer</title>
+        <title>Benjamin Eskew - Web Developer / Software Engineer</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -153,11 +153,8 @@
                     </div>
 
                     <div class="view">
-                        <!-- <a id="timeline-lnk" v-on:mouseover="updateMessage('Click to view my Timeline.', $event)"
-                        v-on:mouseout="clearMessage" v-on:click="showTimeline" class="btn btn-primary btn-lg">
-                        <i class="fa fa-clock-o"></i> View Timeline</a> -->
                         <a id="resume-lnk" v-on:mouseover="updateMessage('Click to view my Resume online.', $event)"
-                        v-on:mouseout="clearMessage" v-on:click="showResume" class="btn btn-default btn-lg">
+                        v-on:mouseout="clearMessage" href="#resume" class="btn btn-default btn-lg">
                         <i class="fa fa-eye"></i> View Resume</a>
                     </div>
                 </div>
@@ -332,8 +329,6 @@
                 ready: function () {
                     this.mainTimer();
                     document.getElementById('resume').style.display = 'none';
-                    document.getElementById('contact').style.display = 'none';
-
                     this.scrollToId('app');
 
                 },
@@ -359,45 +354,11 @@
                     clearMessage: function () {
                         data.message = '';
                     },
-                    /*downloadModal: function () {
-                        swal({
-                            title: "My Resume",
-                            text: "Please click the link below to download my Resume.<br><br>" +
-                             "<a href='http://hi.com'>Download My Resume Here</a>",
-                            html: true
-                        });
-                    },*/
+
                     scrollToId: function (elId) {
                         smoothScroll(elId);
                     },
-                    showContact: function () {
-                        document.getElementById('timeline').style.display = 'none';
-                        document.getElementById('timeline-lnk').className = 'btn btn-default btn-lg';
-                        document.getElementById('resume').style.display = 'none';
-                        document.getElementById('resume-lnk').className = 'btn btn-default btn-lg';
-                        document.getElementById('contact').style.display = 'block';
-                        document.getElementById('contact-lnk').className = 'btn btn-primary btn-lg';
-                        vm.scrollToId('contact');
-                        document.getElementById('name').focus();
-                    },
-                    showResume: function () {
-                        document.getElementById('timeline').style.display = 'none';
-                        document.getElementById('timeline-lnk').className = 'btn btn-default btn-lg';
-                        document.getElementById('contact').style.display = 'none';
-                        document.getElementById('contact-lnk').className = 'btn btn-default btn-lg';
-                        document.getElementById('resume').style.display = 'block';
-                        document.getElementById('resume-lnk').className = 'btn btn-primary btn-lg';
-                        vm.scrollToId('resume');
-                    },
-                    showTimeline: function () {
-                        document.getElementById('resume').style.display = 'none';
-                        document.getElementById('resume-lnk').className = 'btn btn-default btn-lg';
-                        document.getElementById('contact').style.display = 'none';
-                        document.getElementById('contact-lnk').className = 'btn btn-default btn-lg';
-                        document.getElementById('timeline').style.display = 'block';
-                        document.getElementById('timeline-lnk').className = 'btn btn-primary btn-lg';
-                        vm.scrollToId('timeline');
-                    },
+
                     updateMessage: function (message, event) {
                         data.message = message;
                         data.message_event = event;
