@@ -150,7 +150,7 @@
 
                     <div class="view">
                         <a id="resume-lnk" v-on:mouseover="updateMessage('Click to view my Resume online.', $event)"
-                        v-on:mouseout="clearMessage" href="#resume" class="btn btn-default btn-lg">
+                        v-on:mouseout="clearMessage" v-on:click="smoothScroll('resume')" class="btn btn-default btn-lg">
                         <i class="fa fa-eye"></i> View Resume</a>
                     </div>
                 </div>
