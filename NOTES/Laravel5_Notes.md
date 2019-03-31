@@ -23,11 +23,11 @@ Create a controller with a __invoke() method, then in the routes file simply cal
 
 The HomeController will look like this:
 > <?php
-namespace App\Http\Controllers;
-class HomeController extends Controller
-{
-    public function __invoke()
-    {
-        return 'Welcome!';
-    }
-}
+> namespace App\Http\Controllers;
+> class HomeController extends Controller
+> {
+>     public function __invoke()
+>     {
+>         return 'Welcome!';
+>     }
+> }
