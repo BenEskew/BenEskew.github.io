@@ -78,8 +78,9 @@ Can create the invokeable controller using the `artisan` command:
 
 ### Override a specific error view per error code:
 
-Add a view file to `resources/views/errors/404.blade.php` to override the view template for 404 errors:
-Add a view file to `resources/views/errors/402.blade.php` to override the view template for 402 errors:
+Add a view file to `resources/views/errors/404.blade.php` to override the view template for 404 errors.
+
+Add a view file to `resources/views/errors/402.blade.php` to override the view template for 402 errors.
 
 ## Bug Fixes
 
