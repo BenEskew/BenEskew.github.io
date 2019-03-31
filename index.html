@@ -124,13 +124,13 @@
     <body>
         <div id="app" class="container">
             <div class="flex-center position-ref full-height">
-                <!-- <div class="top-left">
+                <div class="top-left">
                     <div class="well">
-                        <em>@{{ $data.current_time }}</em><br>
-                        @{{ $data.message }}
+                        <em>{{ $data.current_time }}</em><br>
+                        {{ $data.message }}
                     </div>
 
-                </div> -->
+                </div>
                 <img v-on:mouseover="updateMessage('Yep, that\'s me!', $event)" v-on:mouseout="clearMessage" src="assets/img/people-ben_eskew.jpg" alt="" class="img-circle n-p">
 
                 <div class="content">
@@ -186,7 +186,7 @@
                         <div class="col-md-9">
                             <div class="jumbotron">
                                 <h1>R&eacute;sum&eacute;, At a Glance</h1>
-                                <p>I am a Web Developer with 10+ years of professional experience in all aspects of web
+                                <p>I am a Web Developer with 15+ years of professional experience in all aspects of web
                                  development and programming; including interface development, information design, and
                                  integrating front-end views with back-end technologies in an elegant fashion.
                                  I am seeking a solid career in an established business environment.</p>
