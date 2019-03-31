@@ -38,6 +38,16 @@ $items = DB::table('items')->whereYear('created_at', '2019')->get();
 $items = DB::table('items')->whereTime('created_at', '=', '12:30:14')->get();
 ```
 
+#### Be careful with DB::raw():
+
+ALWAYS formulate the query like so:
+```
+$items = DB::select(
+    DB::raw("SELECT id, name FROM tablename WHERE `name` = :the_name ORDER BY `name` ASC"),
+    array('the_name' => $name)
+);
+```
+
 ## Controllers
 
 ### Invoke Method (classes with a single method):
