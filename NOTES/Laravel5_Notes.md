@@ -34,3 +34,7 @@ class HomeController extends Controller
     }
 }
 ```
+
+Can create the invokeable controller using the `artisan` command:
+
+> php artisan make:controller HomeController --invokable
