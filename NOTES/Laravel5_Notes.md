@@ -38,3 +38,10 @@ class HomeController extends Controller
 Can create the invokeable controller using the `artisan` command:
 
 > php artisan make:controller HomeController --invokable
+
+## Bug Fixes
+
+### Fix "Specified key was too long error" MySQL-related error:
+
+Add the following to the `boot()` method of app/Providers/AppServiceProvider.php:
+> Schema::defaultStringLength(191);
