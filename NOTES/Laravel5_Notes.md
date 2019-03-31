@@ -4,6 +4,8 @@
 
 ### where()
 
+#### Default Usage:
+
 Default where usage: `->where('fieldname', 'value')` creates:
 > ...WHERE 'fieldname' = 'value'
 
@@ -12,6 +14,29 @@ Can also do: `->where('fieldname', '!=', 'value')` which creates:
 
 More parameters can be used as well:
 > =, <, >, <=, >=, <>, !=, LIKE, NOT LIKE, BETWEEN, ILIKE
+
+#### Select all rows for a specific month (or day, year or time):
+
+Use the `whereDate()` or `whereMonth()` or `whereDay()` or `whereYear()` or `whereTime()` methods:
+```
+$items = DB::table('items')->whereDate('created_at', '2019-03-31')->get();
+```
+
+```
+$items = DB::table('items')->whereMonth('created_at', '03')->get();
+```
+
+```
+$items = DB::table('items')->whereDay('created_at', '31')->get();
+```
+
+```
+$items = DB::table('items')->whereYear('created_at', '2019')->get();
+```
+
+```
+$items = DB::table('items')->whereTime('created_at', '=', '12:30:14')->get();
+```
 
 ## Controllers
 
@@ -41,7 +66,7 @@ Can create the invokeable controller using the `artisan` command:
 
 ## Bug Fixes
 
-### Fix "Specified key was too long error" MySQL-related error:
+### Fix "Specified key was too long" MySQL-related error:
 
-Add the following to the `boot()` method of app/Providers/AppServiceProvider.php:
+Add the following to the `boot()` method of `app/Providers/AppServiceProvider.php`:
 > Schema::defaultStringLength(191);
