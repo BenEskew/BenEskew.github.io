@@ -153,9 +153,11 @@
                     </div>
 
                     <div class="view">
-                        <a id="resume-lnk" v-on:mouseover="updateMessage('Click to view my Resume online.', $event)"
+                        <a id="resume-lnk" v-on:mouseover="updateMessage('Click to view my Resume.', $event)"
                         v-on:mouseout="clearMessage" v-on:click="smoothScroll('resume')" class="btn btn-default btn-lg">
                         <i class="fa fa-eye"></i> View Resume</a>
+
+                        <a id="portfolio-lnk" v-on:mouseover="updateMessage('Click to view my Portfolio.', $event)" v-on:mouseout="clearMessage" v-on:click="smoothScroll('portfolio')" class="btn btn-primary btn-lg"><i class="fa fa-eye"></i> View Portfolio</a>
                     </div>
                 </div>
             </div>
@@ -229,7 +231,7 @@
                             <h3>Skills &amp; Expertise</h3>
                             <div id="skills">
                                 <div>
-                                    <h2><span class="label label-default">PHP 5+</span></h2>
+                                    <h2><span class="label label-default">PHP 5-7</span></h2>
                                     <h2><span class="label label-default">Laravel 1 - 5.8</span></h2>
                                     <h2><span class="label label-default">Vagrant</span></h2>
                                     <h2><span class="label label-default">Homestead</span></h2>
@@ -298,12 +300,64 @@
                 </div>
             </div>
 
+            <div class="row view" id="portfolio" v-on:mouseover="updateMessage('Viewing Portfolio.', $event)"
+            v-on:mouseout="clearMessage">
+                <div class="col-md-12">
+                    <h2>Portfolio</h2>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="assets/img/portfolio/warehouseconnector.png" class="img-thumbnail" width="300"><br><strong>Warehouse Connector</strong>
+                        </div>
+                        <div class="col-md-3">
+                            <img src="assets/img/portfolio/apidataservice.png" class="img-thumbnail" width="300"><br><strong>API DataService</strong>
+                        </div>
+                        <div class="col-md-3">
+                            <img src="assets/img/portfolio/planana.png" class="img-thumbnail" width="300"><br><strong>Planana</strong>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="javascript:void(0);" data-toggle="modal" data-target=".bd-example-modal-lg"><img src="assets/img/portfolio/hyundailiveevent.jpg" class="img-thumbnail" width="300"></a><br><strong>Hyundai LIVE</strong>
+                        </div>
+                    </div>
+                    <div class="row" style="padding-top:25px;">
+                        <div class="col-md-3">
+                            <img src="assets/img/portfolio/babyjogger.jpg" class="img-thumbnail" width="300"><br><strong>Babyjogger</strong>
+                        </div>
+                        <div class="col-md-3">
+                            <img src="assets/img/portfolio/jumpjet.jpg" class="img-thumbnail" width="300"><br><strong>Jumpjet</strong>
+                        </div>
+                        <div class="col-md-3">
+                            <img src="assets/img/portfolio/laughroulette.jpg" class="img-thumbnail" width="300"><br><strong>Laugh Roulette</strong>
+                        </div>
+                        <div class="col-md-3">
+                            <img src="assets/img/portfolio/buyasafe.jpg" class="img-thumbnail" width="300"><br><strong>Buy a Safe</strong>
+                        </div>
+                    </div>
+                    <div class="row" style="padding-top:25px;padding-bottom:50px;">
+                        <div class="col-md-3">
+                            <img src="assets/img/portfolio/dealsonautosales.jpg" class="img-thumbnail" width="300"><br><strong>Deals on Auto Sales</strong>
+                        </div>
+                        <div class="col-md-3">
+                            <img src="assets/img/portfolio/luxmo.jpg" class="img-thumbnail" width="300"><br><strong>Luxmo</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="row">
                 <div class="col-md-12 flex-center">
                     <img src="assets/img/img-bootstrap.png" alt="" class="padd">
                     <img src="assets/img/img-css3.png" alt="" class="padd">
                     <img src="assets/img/img-html5.png" alt="" class="padd">
                     <img src="assets/img/img-vagrant.png" alt="" class="padd">
+                </div>
+            </div>
+        </div>
+
+        <!-- modals -->
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    Hyundai LIVE
                 </div>
             </div>
         </div>

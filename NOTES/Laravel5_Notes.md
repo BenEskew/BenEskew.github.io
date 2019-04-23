@@ -13,7 +13,7 @@ Can also do: `->where('fieldname', '!=', 'value')` which creates:
 > ...WHERE 'fieldname' != 'value'
 
 More parameters can be used as well:
-> =, <, >, <=, >=, <>, !=, LIKE, NOT LIKE, BETWEEN, ILIKE
+`=`, `<`, `>`, `<=`, `>=`, `<>`, `!=`, `LIKE`, `NOT LIKE`, `BETWEEN`, `ILIKE`
 
 #### Select all rows for a specific month (or day, year or time):
 
@@ -52,8 +52,8 @@ $items = DB::select(
 
 ### Invoke Method (classes with a single method):
 
-If a controller has just one method then you can simplify the controller by using the __invoke() method.
-Create a controller with a __invoke() method, then in the routes file simply call it like this:
+If a controller has just one method then you can simplify the controller by using the `__invoke()` method.
+Create a controller with a `__invoke()` method, then in the routes file simply call it like this:
 > Route::get('home', 'HomeController');
 
 The HomeController will look like this:
@@ -88,3 +88,15 @@ Add a view file to `resources/views/errors/402.blade.php` to override the view t
 
 Add the following to the `boot()` method of `app/Providers/AppServiceProvider.php`:
 > Schema::defaultStringLength(191);
+
+## Collections
+
+### Append Data to JSON String (Created from Collection Object):
+
+```
+$CollectionObject = TheModel::where('id', 1)->first();
+$jsonObjectToReturn = json_encode($CollectionObject);
+$newArray = json_decode($jsonObjectToReturn, true);
+$newArray['hello_world'] = 'Hello World';
+$newJsonObjectToReturn = json_encode($newArray);
+```
