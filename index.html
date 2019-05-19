@@ -1,0 +1,262 @@
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Benjamin S. Eskew">
+        <title>Benjamin Eskew - Web Developer / Software Engineer</title>
+        <link rel="stylesheet" type="text/css" href="css/app.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    </head>
+    <body>
+        <div id="app" class="container">
+            <div class="flex-center position-ref full-height">
+                <div class="top-left">
+                    <div class="card card-body bg-light bolded">
+                        <em>{{ $data.current_time }}</em><br>
+                        {{ $data.message }}
+                    </div>
+
+                </div>
+                <img v-on:mouseover="updateMessage('Yep, that\'s me!', $event)" v-on:mouseout="clearMessage" src="img/people-ben_eskew.jpg" alt="" class="rounded-circle n-p">
+
+                <div class="content">
+                    <div class="title m-b-md">
+                        <small>Web Developer / Software Engineer</small>
+                        <div>Benjamin Eskew</div>
+
+                    </div>
+
+                    <div class="links">
+                        <a href="https://www.linkedin.com/in/beneskew/" target="_blank"
+                        v-on:mouseover="updateMessage('View my LinkedIn.', $event)"
+                        v-on:mouseout="clearMessage"
+                        v-on:click="updateMessage('Viewed LinkedIn.', $event)" class="btn btn-outline-dark"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        <a href="https://angel.co/beneskew" target="_blank"
+                        v-on:mouseover="updateMessage('View my AngelList.', $event)"
+                        v-on:mouseout="clearMessage"
+                        v-on:click="updateMessage('Viewed AngelList.', $event)" class="btn btn-outline-dark">
+                        <i class="fab fa-angellist"></i> AngelList</a>
+                    </div>
+
+                    <div class="view">
+                        <a id="resume-lnk" v-on:mouseover="updateMessage('Click to view my Resume.', $event)"
+                        v-on:mouseout="clearMessage" v-on:click="smoothScroll('resume')" class="btn btn-outline-success btn-lg">
+                        <i class="fa fa-eye"></i> View Resume</a>
+
+                        <a id="portfolio-lnk" v-on:mouseover="updateMessage('Click to view my Portfolio.', $event)" v-on:mouseout="clearMessage" v-on:click="smoothScroll('portfolio')" class="btn btn-primary btn-lg white-text"><i class="fa fa-eye"></i> View Portfolio</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row view" id="resume" v-on:mouseover="updateMessage('Viewing Resume.', $event)"
+            v-on:mouseout="clearMessage">
+
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <div class="jumbotron">
+                                <h1 class="bolded">R&eacute;sum&eacute;, At a Glance</h1>
+                                <p class="h3">I am a Web Developer with 15+ years of professional experience in all aspects of web
+                                 development and programming; including interface development, information design, and
+                                 integrating front-end views with back-end technologies in an elegant fashion.
+                                 I am seeking a solid career in an established business environment.</p>
+                            </div>
+                            <h3>Experience</h3>
+                            <div class="row exp-row-container">
+                                <div class="col-md-12 exp-row">
+                                    <h4 class="top10">TripTabs.com
+                                    <small>[2008 - Present] (Hobby Project / Not Full-Time)</small></h4>
+                                    <address>Los Angeles, CA - Founder</address>
+                                    <p>Lead the development of several travel-based web-services for my own company.</p>
+                                    <p>The Laravel platform has been the primary MVC environment being developed with the LEMP stack (Linux, Nginx, MySQL, PHP), PhoneGap for mobile development and utilizing the DigitalOcean cloud for infrastructure and file hosting.</p>
+                                    <p>Also, have worked on many contract-based projects for other companies.</p>
+                                </div>
+                            </div>
+                            <div class="row exp-row-container view">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-11 exp-row">
+                                    <h4 class="top10">Sunrise Integration <small>[August 2016 - June 2017]</small></h4>
+                                    <address>Hollywood, CA - Web Engineer</address>
+                                    <p>Lead the development of many ecommerce-based projects. (Shopify, Magento, custom)
+                                    Developed Shopify e-commerce projects using the Shopify platform (Liquid templates and also custom
+                                    Shopify apps).<br>Educated the entire development team about “new” technologies, including Laravel, Composer,
+                                    Vagrant, Git, Vue.js, Redis, Node.js, PhoneGap, and various Unix/Linux command-line applications.</p>
+                                </div>
+                            </div>
+                            <div class="row exp-row-container view">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-10 exp-row">
+                                    <h4 class="top10">PowerHouse Creative, LLC <small>[February 2013 - November 2013]</small></h4>
+                                    <address>Hollywood, CA - Senior Developer</address>
+                                    <p>Lead the management and production of projects and custom MVC software solutions
+                                    for fortune 500 and other various companies and corporations.</p>
+                                    <p>Technologies utilized here range from LAMP stack builds in the cloud (AWS; RackSpace; DigitalOcean) to simple configurations, depending on the requirements of the client.</p>
+                                </div>
+                            </div>
+                            <div class="row exp-row-container view">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-11 exp-row">
+                                    <h4 class="top10"><a href="https://gust.com/companies/planana" target="_blank">trueRSVP, Inc. (Planana)</a> <small>[May 2012 - September 2012]</small></h4>
+                                    <address>Hollywood, CA - Lead Developer</address>
+                                    <p>Lead the management and production of projects and custom web software development. Managed an out-sourced team of web developers and learned the ins-and-outs of “start-up” business development. Also, was involved in “pitching” the business to investors and agencies.</p>
+                                    <p>The LAMP stack was utilized here and a custom framework was developed for the web-services.</p>
+                                </div>
+                            </div>
+                            <div class="row exp-row-container view">
+                                <div class="col-md-12 exp-row">
+                                    <h4 class="top10">Connect a Job, LLC <small>[January 2011 - March 2012]</small></h4>
+                                    <address>Canoga Park, CA - Senior Software Engineer</address>
+                                    <p>Lead the management and production of several web projects, requiring a small development team, one designer, and a quality assurance engineer.</p>
+                                    <p>The LAMP stack was used here. Magento; RackSpace Cloud;</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <h3>Skills &amp; Expertise</h3>
+                            <div id="skills">
+                                <div>
+                                    <h2><span class="btn btn-primary bolded"><i class="fab fa-php"></i> PHP 5-7</span></h2>
+                                    <h2><span class="btn btn-primary bolded"><i class="fab fa-laravel"></i> Laravel 1 - 5.8</span></h2>
+                                    <h2><span class="btn btn-primary bolded">Vagrant</span></h2>
+                                    <h2><span class="btn btn-outline-primary bolded">Homestead</span></h2>
+                                    <h2><span class="btn btn-outline-secondary"><i class="fab fa-symfony"></i> Symfony</span></h2>
+                                    <h2><span class="btn btn-primary bolded">MySQL</span></h2>
+                                    <h2><span class="btn btn-outline-secondary">PostgreSQL</span></h2>
+
+                                    <h2><span class="btn btn-primary bolded"><i class="fab fa-js"></i> JavaScript</span></h2>
+                                    <h2><span class="btn btn-primary bolded"><i class="fab fa-vuejs"></i> Vue.js</span></h2>
+                                    <h2><span class="btn btn-outline-secondary">Ext JS</span></h2>
+                                    <h2><span class="btn btn-primary bolded">Composer</span></h2>
+                                    <h2><span class="btn btn-primary bolded"><i class="fab fa-git"></i> Git</span></h2>
+                                    <h2><span class="btn btn-primary"><i class="fab fa-bitbucket"></i> BitBucket</span></h2>
+                                    <h2><span class="btn btn-outline-secondary"><i class="fab fa-node"></i> Node.js</span></h2>
+                                    <h2><span class="btn btn-outline-secondary"><i class="fab fa-npm"></i> npm</span></h2>
+
+                                    <h2><span class="btn btn-outline-secondary">C++</span></h2>
+                                    <h2><span class="btn btn-primary bolded"><i class="fab fa-ubuntu"></i> Ubuntu</span></h2>
+                                    <h2><span class="btn btn-outline-secondary">Unix</span></h2>
+                                    <h2><span class="btn btn-primary bolded"><i class="fab fa-linux"></i> Linux</span></h2>
+                                    <h2><span class="btn btn-primary bolded">Apache</span></h2>
+                                    <h2><span class="btn btn-primary bolded">Nginx</span></h2>
+                                    <h2><span class="btn btn-primary bolded">LAMP</span></h2>
+                                    <h2><span class="btn btn-primary bolded">LEMP</span></h2>
+                                    <h2><span class="btn btn-outline-primary bolded">SSH</span></h2>
+                                    <h2><span class="btn btn-outline-secondary">Bash</span></h2>
+
+                                    <h2><span class="btn btn-primary bolded"><i class="fab fa-html5"></i> HTML5</span></h2>
+                                    <h2><span class="btn btn-primary bolded"><i class="fab fa-css3"></i> CSS3</span></h2>
+                                    <h2><span class="btn btn-primary"><i class="fab fa-sass"></i> SASS</span></h2>
+                                    <h2><span class="btn btn-primary bolded"><i class="fab fa-bootstrap"></i> Bootstrap</span></h2>
+                                    <h2><span class="btn btn-outline-secondary">XML</span></h2>
+                                    <h2><span class="btn btn-outline-secondary">XSLT</span></h2>
+                                    <h2><span class="btn btn-outline-secondary"><i class="fab fa-gulp"></i> Gulp</span></h2>
+
+
+                                    <h2><span class="btn btn-outline-primary bolded">CRUD</span></h2>
+                                    <h2><span class="btn btn-primary bolded">MVC</span></h2>
+                                    <h2><span class="btn btn-outline-primary bolded">SOLID</span></h2>
+                                </div>
+
+                                <h4 class="view">I Follow These Principles:</h4>
+                                <ul class="list-group">
+                                    <li class="list-group-item"><h2><span class="btn btn-outline-primary bolded">KISS</span></h2></li>
+                                    <li class="list-group-item"><h2><span class="btn btn-outline-primary bolded">DRY</span></h2></li>
+                                </ul>
+
+                                <h4 class="view">I Use This Software:</h4>
+                                <ul class="list-group">
+                                    <li class="list-group-item"><h2><span class="btn btn-primary bolded">PHPStorm</span></h2></li>
+                                    <li class="list-group-item"><h2><span class="btn btn-primary bolded">Sublime Text</span></h2></li>
+                                    <li class="list-group-item"><h2><span class="btn btn-outline-secondary"> Atom</span></h2></li>
+                                    <li class="list-group-item"><h2><span class="btn btn-primary bolded">Vagrant</span></h2></li>
+                                    <li class="list-group-item"><h2><span class="btn btn-outline-primary bolded">MinGW</span></h2></li>
+                                    <li class="list-group-item"><h2><span class="btn btn-outline-secondary">Putty</span></h2></li>
+                                </ul>
+
+                                <h4 class="view">I Prefer These Services:</h4>
+                                <ul class="list-group">
+                                    <li class="list-group-item"><h2><a href="https://m.do.co/c/9f5e3c123ef4" target="_blank"><i class="fab fa-digital-ocean"></i> DigitalOcean</a></h2></li>
+                                    <li class="list-group-item"><h2><a href="https://forge.laravel.com/">Laravel Forge</a></h2></li>
+                                    <li class="list-group-item"><h2><i class="fab fa-aws"></i> Amazon Web Services</h2></li>
+                                </ul>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row view" id="portfolio" v-on:mouseover="updateMessage('Viewing Portfolio.', $event)" v-on:mouseout="clearMessage">
+                <div class="col-md-12">
+                    <h2>Portfolio</h2>
+                    <div class="row">
+                        <div class="col-md-3 fixed-height250 content">
+                            <img src="img/portfolio/warehouseconnector.png" class="img-thumbnail" width="300"><h5>Warehouse Connector<br>2016-2017</h5>
+                        </div>
+                        <div class="col-md-3 fixed-height250 content">
+                            <img src="img/portfolio/apidataservice.png" class="img-thumbnail" width="300"><h5>API DataService<br>2016-2017</h5>
+                        </div>
+                        <div class="col-md-3 fixed-height250 content">
+                            <img src="img/portfolio/planana.png" class="img-thumbnail" width="300"><h5>Planana<br>2012</h5>
+                        </div>
+                        <div class="col-md-3 fixed-height250 content">
+                            <img src="img/portfolio/hyundailiveevent.jpg" class="img-thumbnail" width="300"><h5>Hyundai LIVE<br>2013</h5>
+                        </div>
+                    </div>
+                    <div class="row view">
+                        <div class="col-md-3 fixed-height250 content">
+                            <img src="img/portfolio/babyjogger.jpg" class="img-thumbnail" width="300"><h5>Babyjogger<br>2013</h5>
+                        </div>
+                        <div class="col-md-3 fixed-height250 content">
+                            <img src="img/portfolio/jumpjet.jpg" class="img-thumbnail" width="300"><h5>Jumpjet<br>2013</h5>
+                        </div>
+                        <div class="col-md-3 fixed-height250 content">
+                            <img src="img/portfolio/laughroulette.jpg" class="img-thumbnail" width="300"><h5>Laugh Roulette<br>2013</h5>
+                        </div>
+                        <div class="col-md-3 fixed-height250 content">
+                            <img src="img/portfolio/buyasafe.jpg" class="img-thumbnail" width="300"><h5>Buy a Safe<br>2012</h5>
+                        </div>
+                    </div>
+                    <div class="row view" style="padding-bottom:50px;">
+                        <div class="col-md-3 fixed-height250 content">
+                            <img src="img/portfolio/dealsonautosales.jpg" class="img-thumbnail" width="300"><h5>Deals on Auto Sales<br>2013</h5>
+                        </div>
+                        <div class="col-md-3 fixed-height250 content">
+                            <img src="img/portfolio/luxmo.jpg" class="img-thumbnail" width="300"><h5>Luxmo<br>2010-2011</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 flex-center">
+                    <img src="img/img-bootstrap.png" alt="" class="padd">
+                    <img src="img/img-css3.png" alt="" class="padd">
+                    <img src="img/img-html5.png" alt="" class="padd">
+                    <img src="img/img-vagrant.png" alt="" class="padd">
+                </div>
+            </div>
+        </div>
+
+        <script src="js/app.js"></script>
+        <!-- Default Statcounter code for Beneskew.github.io
+        https://beneskew.github.io -->
+        <script type="text/javascript">
+        var sc_project=11979098;
+        var sc_invisible=1;
+        var sc_security="5d54e507";
+        </script>
+        <script type="text/javascript"
+        src="https://www.statcounter.com/counter/counter.js"
+        async></script>
+        <noscript><div class="statcounter"><a title="Web Analytics"
+        href="https://statcounter.com/" target="_blank"><img
+        class="statcounter"
+        src="https://c.statcounter.com/11979098/0/5d54e507/1/"
+        alt="Web Analytics"></a></div></noscript>
+        <!-- End of Statcounter Code -->
+    </body>
+</html>
