@@ -11,7 +11,13 @@
     <body>
         <div id="app" class="container">
             <div class="flex-center position-ref full-height">
-                <img src="img/people-ben_eskew.jpg" alt="" class="rounded-circle n-p">
+                <div class="top-left">
+                    <div class="card card-body bg-light bolded">
+                        {{ $data.message }}
+                    </div>
+
+                </div>
+                <img v-on:mouseover="updateMessage('Yep, that\'s me!', $event)" v-on:mouseout="clearMessage" src="img/people-ben_eskew.jpg" alt="" class="rounded-circle n-p">
 
                 <div class="content">
                     <div class="title m-b-md">
@@ -21,21 +27,29 @@
                     </div>
 
                     <div class="links">
-                        <a href="https://www.linkedin.com/in/beneskew/" target="_blank" class="btn btn-outline-dark"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                        <a href="https://angel.co/beneskew" target="_blank" class="btn btn-outline-dark">
+                        <a href="https://www.linkedin.com/in/beneskew/" target="_blank"
+                        v-on:mouseover="updateMessage('View my LinkedIn.', $event)"
+                        v-on:mouseout="clearMessage"
+                        v-on:click="updateMessage('Viewed LinkedIn.', $event)" class="btn btn-outline-dark"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        <a href="https://angel.co/beneskew" target="_blank"
+                        v-on:mouseover="updateMessage('View my AngelList.', $event)"
+                        v-on:mouseout="clearMessage"
+                        v-on:click="updateMessage('Viewed AngelList.', $event)" class="btn btn-outline-dark">
                         <i class="fab fa-angellist"></i> AngelList</a>
                     </div>
 
                     <div class="view">
-                        <a id="resume-lnk" class="btn btn-outline-success btn-lg">
+                        <a id="resume-lnk" v-on:mouseover="updateMessage('Click to view my Resume.', $event)"
+                        v-on:mouseout="clearMessage" v-on:click="smoothScroll('resume')" class="btn btn-outline-success btn-lg">
                         <i class="fa fa-eye"></i> View Resume</a>
 
-                        <a id="portfolio-lnk" class="btn btn-primary btn-lg white-text"><i class="fa fa-eye"></i> View Portfolio</a>
+                        <a id="portfolio-lnk" v-on:mouseover="updateMessage('Click to view my Portfolio.', $event)" v-on:mouseout="clearMessage" v-on:click="smoothScroll('portfolio')" class="btn btn-primary btn-lg white-text"><i class="fa fa-eye"></i> View Portfolio</a>
                     </div>
                 </div>
             </div>
 
-            <div class="row view" id="resume">
+            <div class="row view" id="resume" v-on:mouseover="updateMessage('Viewing Resume.', $event)"
+            v-on:mouseout="clearMessage">
 
                 <div class="col-md-12">
                     <div class="row">
@@ -173,7 +187,7 @@
                 </div>
             </div>
 
-            <div class="row view" id="portfolio">
+            <div class="row view" id="portfolio" v-on:mouseover="updateMessage('Viewing Portfolio.', $event)" v-on:mouseout="clearMessage">
                 <div class="col-md-12">
                     <h2>Portfolio</h2>
                     <div class="row">
