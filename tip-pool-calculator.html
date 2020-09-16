@@ -47,6 +47,39 @@
                             <div id="results_cash" class=""></div>
                         </div>
                     </div>
+                    <div class="flex-1 text-gray-700 px-4 py-2 m-2">
+                        <table>
+                            <tr>
+                                <td>Employees in Pool:</td>
+                                <td><span id="employee_amount">1</span></td>
+                            </tr>
+                            <tr>
+                                <td>CC Provided:</td>
+                                <td><span id="cc_provided">0.00</span></td>
+                            </tr>
+                            <tr>
+                                <td>CC Distributed:</td>
+                                <td><span id="cc_distributed">0.00</span></td>
+                            </tr>
+                            <tr>
+                                <td>CC Remaining:</td>
+                                <td><span id="cc_remaining">0.00</span></td>
+                            </tr>
+                            <tr>
+                                <td>Cash Provided:</td>
+                                <td><span id="cash_provided">0.00</span></td>
+                            </tr>
+                            <tr>
+                                <td>Cash Distributed:</td>
+                                <td><span id="cash_distributed">0.00</span></td>
+                            </tr>
+                            <tr>
+                                <td>Cash Remaining:</td>
+                                <td><span id="cash_remaining">0.00</span></td>
+                            </tr>
+                        </table>
+                        <!-- <div id="results_final"></div> -->
+                    </div>
                 </div>
             
                 <div class="p-5"><hr></div>
@@ -728,6 +761,7 @@
                             </tr>
                         </tbody>
                     </table>
+                    <!-- <input type="hidden" name="employee_amount" id="employee_amount" value="0"> -->
                 </form>
 
             </div>
@@ -789,6 +823,16 @@
             }
         }
 
+        function checkRow(rowId) {
+            let ttlhrs = document.getElementById('total_hours_'+rowId).value;
+
+            if (ttlhrs == '') {
+                // empty row data...
+                document.getElementById('total_cc_'+rowId).value = '';
+                document.getElementById('total_cash_'+rowId).value = '';
+            }
+        }
+
         function doFinalChecks(){
             // #total_hours_check
             // #total_cc_check
@@ -818,10 +862,9 @@
 
             // #total_cash_check
                 let ttlcash = parseFloat(document.getElementById('total_cash').value);
+                let ttlcash_grp = 0.00;
 
                 if (ttlcash) {
-                    var ttlcash_grp = 0;
-
                     for (let ii = 1; ii < 6; ii++) {
                         if (document.getElementById('total_cash_'+ii).value != '') {
                             ttlcash_grp += parseFloat(document.getElementById('total_cash_'+ii).value);
@@ -840,7 +883,33 @@
                 } else {
                     document.getElementById('results_cash').innerHTML = '<div class="text-red-600 font-black">Cash: No Cash!</div>';
                 }
-                // get total of all
+                
+            // #results_final
+                // "Number of Employees in Pool: ##"
+                //
+                // "CC Amount Provided: ###"
+                document.getElementById('cc_provided').innerHTML = ttlcc;
+                // "CC Amount Distributed: ###"
+                document.getElementById('cc_distributed').innerHTML = ttlcc_grp;
+                // "CC Amount Remaining: ###"
+                if (ttlcc > ttlcc_grp) {
+                    let rmcc = ttlcc - ttlcc_grp;
+                    document.getElementById('cc_remaining').innerHTML = rmcc.toFixed(2);
+                }
+                // "Cash Amount Provided: ###"
+                if (ttlcash > 0) {
+                    document.getElementById('cash_provided').innerHTML = ttlcash;
+                } else {
+                    document.getElementById('cash_provided').innerHTML = 0.00;
+                }
+                
+                // "Cash Amount Distributed: ###"
+                document.getElementById('cash_distributed').innerHTML = ttlcash_grp;
+                // "Cash Amount Remaining: ###"
+                if (ttlcash > ttlcash_grp) {
+                    let rmcash = ttlcash - ttlcash_grp;
+                    document.getElementById('cash_remaining').innerHTML = rmcash.toFixed(2);
+                }
         }
 
         function processTotals() {
@@ -859,6 +928,8 @@
             cashHourly();
 
             for (let i = 1; i < 6; i++) {
+                checkRow(i);
+
                 if (document.getElementById('total_hours_'+i).value != '') {
                     ccTips(i);
                     cashTips(i);
@@ -870,12 +941,16 @@
 
         function getTotalHours(){
             let ttl = 0.00;
+            let ttl_employees = 0;
 
             for (let i = 1; i < 6; i++) {
                 if (parseFloat(document.getElementById('total_hours_'+i).value) > 0) {
+                    ttl_employees++;
                     ttl += parseFloat(document.getElementById('total_hours_'+i).value);
                 }
             }
+
+            document.getElementById('employee_amount').innerHTML = ttl_employees;
 
             return ttl;
         }
