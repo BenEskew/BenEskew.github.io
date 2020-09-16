@@ -30,8 +30,8 @@
                 <div class="flex bg-gray-200">
                     <div class="flex-1 text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
                         <table>
-                            <tr><td class="p-6 text-black-700 text-opacity-75 font-black">TOTAL CC:</td><td class="p-6"><input type="number" min="0" name="total_cc" id="total_cc" value="" class="focus:underline w-20 shadow appearance-none border rounded"  onchange="javascript:processTotals();" autofocus></td></tr>
-                            <tr><td class="p-6 text-black-700 text-opacity-75 font-black">TOTAL CASH:</td><td class="p-6"><input type="number" min="0" name="total_cash" id="total_cash" value="" class="focus:underline w-20 shadow appearance-none border rounded" onchange="javascript:processTotals();"></td></tr>
+                            <tr><td class="p-6 text-black-700 text-opacity-75 font-black">TOTAL CC:</td><td class="p-6"><input type="number" min="0" step="0.01" name="total_cc" id="total_cc" value="" class="focus:underline w-20 shadow appearance-none border rounded"  onchange="javascript:processTotals();" autofocus></td></tr>
+                            <tr><td class="p-6 text-black-700 text-opacity-75 font-black">TOTAL CASH:</td><td class="p-6"><input type="number" min="0" step="0.01" name="total_cash" id="total_cash" value="" class="focus:underline w-20 shadow appearance-none border rounded" onchange="javascript:processTotals();"></td></tr>
                         </table>
                     </div>
                     <div class="flex-1 text-gray-700 px-4 py-2 m-2">
@@ -217,7 +217,7 @@
                                     </div>
                                 </td>
                                 <td class="p-5">
-                                    <input type="number" min="0" name="total_hours_1" id="total_hours_1" value="7.5" class="w-20 shadow appearance-none border rounded"  onchange="javascript:processTotals();">
+                                    <input type="number" min="0" step="0.01" max="18" name="total_hours_1" id="total_hours_1" value="7.5" class="w-20 shadow appearance-none border rounded"  onchange="javascript:processTotals();">
                                 </td>
                                 <td class="p-5">
                                     <input type="number" min="0" name="total_cc_1" id="total_cc_1" value="0" class="w-20 shadow appearance-none border rounded" disabled>
@@ -347,7 +347,7 @@
                                     </div>
                                 </td>
                                 <td class="p-5">
-                                    <input type="number" min="0" name="total_hours_2" id="total_hours_2" value="" class="w-20 shadow appearance-none border rounded"  onchange="javascript:processTotals();">
+                                    <input type="number" min="0" step="0.01" max="18" name="total_hours_2" id="total_hours_2" value="" class="w-20 shadow appearance-none border rounded"  onchange="javascript:processTotals();">
                                 </td>
                                 <td class="p-5">
                                     <input type="number" min="0" name="total_cc_2" id="total_cc_2" value="0" class="w-20 shadow appearance-none border rounded" disabled>
@@ -477,7 +477,7 @@
                                     </div>
                                 </td>
                                 <td class="p-5">
-                                    <input type="number" min="0" name="total_hours_3" id="total_hours_3" value="" class="w-20 shadow appearance-none border rounded"  onchange="javascript:processTotals();">
+                                    <input type="number" min="0" step="0.01" max="18" name="total_hours_3" id="total_hours_3" value="" class="w-20 shadow appearance-none border rounded"  onchange="javascript:processTotals();">
                                 </td>
                                 <td class="p-5">
                                     <input type="number" min="0" name="total_cc_3" id="total_cc_3" value="0" class="w-20 shadow appearance-none border rounded" disabled>
@@ -607,7 +607,7 @@
                                     </div>
                                 </td>
                                 <td class="p-5">
-                                    <input type="number" min="0" name="total_hours_4" id="total_hours_4" value="" class="w-20 shadow appearance-none border rounded"  onchange="javascript:processTotals();">
+                                    <input type="number" min="0" step="0.01" max="18" name="total_hours_4" id="total_hours_4" value="" class="w-20 shadow appearance-none border rounded"  onchange="javascript:processTotals();">
                                 </td>
                                 <td class="p-5">
                                     <input type="number" min="0" name="total_cc_4" id="total_cc_4" value="0" class="w-20 shadow appearance-none border rounded" disabled>
@@ -737,7 +737,7 @@
                                     </div>
                                 </td>
                                 <td class="p-5">
-                                    <input type="number" min="0" name="total_hours_5" id="total_hours_5" value="" class="w-20 shadow appearance-none border rounded"  onchange="javascript:processTotals();">
+                                    <input type="number" min="0" step="0.01" max="18" name="total_hours_5" id="total_hours_5" value="" class="w-20 shadow appearance-none border rounded"  onchange="javascript:processTotals();">
                                 </td>
                                 <td class="p-5">
                                     <input type="number" min="0" name="total_cc_5" id="total_cc_5" value="0" class="w-20 shadow appearance-none border rounded" disabled>
@@ -770,7 +770,7 @@
             let ttlcash = parseFloat(document.getElementById('total_cash').value);
             let ttlhrs = parseFloat(document.getElementById('total_hours').innerHTML);
 
-            if (!ttlcash) {
+            if (!ttlcash || !ttlhrs) {
                 return 0;
             }
 
@@ -811,7 +811,7 @@
             let ttlcchr = parseFloat(document.getElementById('total_cc_hourly').innerHTML);
             let ttlhrs = parseFloat(document.getElementById('total_hours_'+rowId).value);
 
-            if (ttlhrs) {
+            if (ttlhrs && ttlcchr) {
                 let cctips = parseFloat(ttlcchr * ttlhrs);
 
                 document.getElementById('total_cc_'+rowId).value = Math.floor(cctips);
@@ -917,7 +917,37 @@
                 }
         }
 
+        function processClear() {
+            // employee_amount (int)
+            document.getElementById('employee_amount').innerHTML = 0;
+            // total_hours (float)
+            document.getElementById('total_hours').innerHTML = 0.0;
+            // total_cc_hourly (float)
+            document.getElementById('total_cc_hourly').innerHTML = 0;
+            // total_cash_hourly (float)
+            document.getElementById('total_cash_hourly').innerHTML = 0;
+            // results_cc - clear
+            document.getElementById('results_cc').innerHTML = '';
+            // results_cash - clear
+            document.getElementById('results_cash').innerHTML = '';
+            // cc_provided (float)
+            document.getElementById('cc_provided').innerHTML = '0.00';
+            // cc_distributed (float)
+            document.getElementById('cc_distributed').innerHTML = '0.00';
+            // cc_remaining (float)
+            document.getElementById('cc_remaining').innerHTML = '0.00';
+            // cash_provided (float)
+            document.getElementById('cash_provided').innerHTML = '0.00';
+            // cash_distributed (float)
+            document.getElementById('cash_distributed').innerHTML = '0.00';
+            // cash_remaining (float)
+            document.getElementById('cash_remaining').innerHTML = '0.00';
+        }
+
         function processTotals() {
+            //
+            processClear();
+
             // get totals from input
             let total_cc = parseFloat(document.getElementById('total_cc').value);
             let total_cash = parseFloat(document.getElementById('total_cash').value);
