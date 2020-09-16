@@ -37,6 +37,7 @@
                     <div class="flex-1 text-gray-700 px-4 py-2 m-2">
                         <div class="">
                             <table>
+                                <tr><td>Employees in Pool:</td><td><span id="employee_amount" class="">0</span></td></tr>
                                 <tr><td>Total Hours:</td><td><span id="total_hours" class="">0</span></td></tr>
                                 <tr><td>CC Hourly:</td><td><span id="total_cc_hourly" class="">0</span></td></tr>
                                 <tr><td>Cash Hourly:</td><td><span id="total_cash_hourly" class="">0</span></td></tr>
@@ -49,10 +50,6 @@
                     </div>
                     <div class="flex-1 text-gray-700 px-4 py-2 m-2">
                         <table>
-                            <tr>
-                                <td>Employees in Pool:</td>
-                                <td><span id="employee_amount">1</span></td>
-                            </tr>
                             <tr>
                                 <td>CC Provided:</td>
                                 <td><span id="cc_provided">0.00</span></td>
@@ -888,9 +885,9 @@
                 // "Number of Employees in Pool: ##"
                 //
                 // "CC Amount Provided: ###"
-                document.getElementById('cc_provided').innerHTML = ttlcc;
+                document.getElementById('cc_provided').innerHTML = ttlcc.toFixed(2);
                 // "CC Amount Distributed: ###"
-                document.getElementById('cc_distributed').innerHTML = ttlcc_grp;
+                document.getElementById('cc_distributed').innerHTML = ttlcc_grp.toFixed(2);
                 // "CC Amount Remaining: ###"
                 if (ttlcc > ttlcc_grp) {
                     let rmcc = ttlcc - ttlcc_grp;
@@ -898,13 +895,13 @@
                 }
                 // "Cash Amount Provided: ###"
                 if (ttlcash > 0) {
-                    document.getElementById('cash_provided').innerHTML = ttlcash;
+                    document.getElementById('cash_provided').innerHTML = ttlcash.toFixed(2);
                 } else {
-                    document.getElementById('cash_provided').innerHTML = 0.00;
+                    document.getElementById('cash_provided').innerHTML = '0.00';
                 }
                 
                 // "Cash Amount Distributed: ###"
-                document.getElementById('cash_distributed').innerHTML = ttlcash_grp;
+                document.getElementById('cash_distributed').innerHTML = ttlcash_grp.toFixed(2);
                 // "Cash Amount Remaining: ###"
                 if (ttlcash > ttlcash_grp) {
                     let rmcash = ttlcash - ttlcash_grp;
