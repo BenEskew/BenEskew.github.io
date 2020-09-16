@@ -1,0 +1,884 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Tip Pool Calculator</title>
+
+        <!-- Fonts -->
+        <link rel="dns-prefetch" href="//fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+
+        <!-- Styles -->
+        <link href="./assets/css/tailwind.css" rel="stylesheet">
+        <style>
+            .font-family-karla {
+                font-family: karla;
+            }
+        </style>
+    </head>
+<body>
+    <div class="flex">
+        <div class="container mx-auto">
+            <div class="m-5">
+                <div class="">
+                    <h1 class="text-6xl"><!--<span class="font-black">Beauty &amp; Essex</span> -->Tip Pool Calculator</h1>
+                </div>
+
+                <div class="flex bg-gray-200">
+                    <div class="flex-1 text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
+                        <table>
+                            <tr><td class="p-6 text-black-700 text-opacity-75 font-black">TOTAL CC:</td><td class="p-6"><input type="text" name="total_cc" id="total_cc" value="" class="focus:underline w-20 shadow appearance-none border rounded"  onchange="javascript:processTotals();" autofocus></td></tr>
+                            <tr><td class="p-6 text-black-700 text-opacity-75 font-black">TOTAL CASH:</td><td class="p-6"><input type="text" name="total_cash" id="total_cash" value="" class="focus:underline w-20 shadow appearance-none border rounded" onchange="javascript:processTotals();"></td></tr>
+                        </table>
+                    </div>
+                    <div class="flex-1 text-gray-700 px-4 py-2 m-2">
+                        <div class="">
+                            <table>
+                                <tr><td>Total Hours:</td><td><span id="total_hours" class="">0</span></td></tr>
+                                <tr><td>CC Hourly:</td><td><span id="total_cc_hourly" class="">0</span></td></tr>
+                                <tr><td>Cash Hourly:</td><td><span id="total_cash_hourly" class="">0</span></td></tr>
+                            </table>
+                        </div>
+                        <div id="results" class="mt-20">
+                            <div id="results_cc" class=""></div>
+                            <div id="results_cash" class=""></div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="p-5"><hr></div>
+
+                <form>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>In</th>
+                                <th>Lunch Start</th>
+                                <th>Lunch End</th>
+                                <th>Out</th>
+                                <th>Total Hours</th>
+                                <th>CC Tips</th>
+                                <th>Cash Tips</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="row1" class="divide-y-2 divide-gray-500 divide-dashed">
+                                <td class="p-5">
+                                    <input type="text" name="name_1" id="name_1" value="" class="shadow appearance-none border rounded" placeholder="Jane Doe">
+                                </td>
+                                <td class="mt-2 p-5 w-40 bg-white rounded shadow">
+                                    <div class="flex">
+                                        <select disabled name="hours_start_1" id="hours_start_1" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5" selected>5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                        <span class="text-xs mr-3">:</span>
+                                        <select disabled name="minutes_start_1" id="minutes_start_1" class="bg-transparent text-xs appearance-none outline-none mr-4">
+                                            <option value="00">00</option>
+                                            <option value="15">15</option>
+                                            <option value="30" selected>30</option>
+                                            <option value="45">45</option>
+                                        </select>
+                                        <select disabled name="ampm_start_1" id="ampm_start_1" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="am">AM</option>
+                                            <option value="pm" selected>PM</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td class="mt-2 p-5 w-40 bg-white rounded shadow">
+                                    <div class="flex">
+                                        <select disabled name="hours_lunch_start_1" id="hours_lunch_start_1" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6" selected>6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                        <span class="text-xs mr-3">:</span>
+                                        <select disabled name="minutes_lunch_start_1" id="minutes_lunch_start_1" class="bg-transparent text-xs appearance-none outline-none mr-4">
+                                            <option value="00" selected>00</option>
+                                            <option value="15">15</option>
+                                            <option value="30">30</option>
+                                            <option value="45">45</option>
+                                        </select>
+                                        <select disabled name="ampm_lunch_start_1" id="ampm_lunch_start_1" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="am">AM</option>
+                                            <option value="pm" selected>PM</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td class="mt-2 p-5 w-40 bg-white rounded shadow">
+                                    <div class="flex">
+                                        <select disabled name="hours_lunch_end_1" id="hours_lunch_end_1" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6" selected>6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                        <span class="text-xs mr-3">:</span>
+                                        <select disabled name="minutes_lunch_end_1" id="minutes_lunch_end_1" class="bg-transparent text-xs appearance-none outline-none mr-4">
+                                            <option value="00">00</option>
+                                            <option value="15">15</option>
+                                            <option value="30" selected>30</option>
+                                            <option value="45">00</option>
+                                        </select>
+                                        <select disabled name="ampm_lunch_end_1" id="ampm_lunch_end_1" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="am">AM</option>
+                                            <option value="pm" selected>PM</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td class="mt-2 p-5 w-40 bg-white rounded shadow">
+                                    <div class="flex">
+                                        <select disabled name="hours_out_1" id="hours_out_1" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="1" selected>1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                        <span class="text-xs mr-3">:</span>
+                                        <select disabled name="minutes_out_1" id="minutes_out_1" class="bg-transparent text-xs appearance-none outline-none mr-4">
+                                            <option value="00" selected>00</option>
+                                            <option value="15">15</option>
+                                            <option value="30">30</option>
+                                            <option value="45">45</option>
+                                        </select>
+                                        <select disabled name="ampm_out_1" id="ampm_out_1" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="am" selected>AM</option>
+                                            <option value="pm">PM</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td class="p-5">
+                                    <input type="text" name="total_hours_1" id="total_hours_1" value="7.5" class="w-20 shadow appearance-none border rounded"  onchange="javascript:processTotals();">
+                                </td>
+                                <td class="p-5">
+                                    <input type="text" name="total_cc_1" id="total_cc_1" value="0" class="w-20 shadow appearance-none border rounded" disabled>
+                                </td>
+                                <td class="p-5">
+                                    <input type="text" name="total_cash_1" id="total_cash_1" value="0" class="w-20 shadow appearance-none border rounded" disabled>
+                                </td>
+                            </tr>
+                            <tr id="row2" class="divide-y-2 divide-gray-500 divide-dashed">
+                                <td class="p-5">
+                                    <input type="text" name="name_2" id="name_2" value="" class="shadow appearance-none border rounded" placeholder="Jane Doe">
+                                </td>
+                                <td class="mt-2 p-5 w-40 bg-white rounded shadow">
+                                    <div class="flex">
+                                        <select disabled name="hours_start_2" id="hours_start_2" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5" selected>5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                        <span class="text-xs mr-3">:</span>
+                                        <select disabled name="minutes_start_2" id="minutes_start_2" class="bg-transparent text-xs appearance-none outline-none mr-4">
+                                            <option value="00">00</option>
+                                            <option value="15">15</option>
+                                            <option value="30" selected>30</option>
+                                            <option value="45">45</option>
+                                        </select>
+                                        <select disabled name="ampm_start_2" id="ampm_start_2" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="am">AM</option>
+                                            <option value="pm" selected>PM</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td class="mt-2 p-5 w-40 bg-white rounded shadow">
+                                    <div class="flex">
+                                        <select disabled name="hours_lunch_start_2" id="hours_lunch_start_2" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6" selected>6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                        <span class="text-xs mr-3">:</span>
+                                        <select disabled name="minutes_lunch_start_2" id="minutes_lunch_start_2" class="bg-transparent text-xs appearance-none outline-none mr-4">
+                                            <option value="00" selected>00</option>
+                                            <option value="15">15</option>
+                                            <option value="30">30</option>
+                                            <option value="45">45</option>
+                                        </select>
+                                        <select disabled name="ampm_lunch_start_2" id="ampm_lunch_start_2" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="am">AM</option>
+                                            <option value="pm" selected>PM</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td class="mt-2 p-5 w-40 bg-white rounded shadow">
+                                    <div class="flex">
+                                        <select disabled name="hours_lunch_end_2" id="hours_lunch_end_2" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6" selected>6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                        <span class="text-xs mr-3">:</span>
+                                        <select disabled name="minutes_lunch_end_2" id="minutes_lunch_end_2" class="bg-transparent text-xs appearance-none outline-none mr-4">
+                                            <option value="00">00</option>
+                                            <option value="15">15</option>
+                                            <option value="30" selected>30</option>
+                                            <option value="45">00</option>
+                                        </select>
+                                        <select disabled name="ampm_lunch_end_2" id="ampm_lunch_end_2" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="am">AM</option>
+                                            <option value="pm" selected>PM</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td class="mt-2 p-5 w-40 bg-white rounded shadow">
+                                    <div class="flex">
+                                        <select disabled name="hours_out_2" id="hours_out_2" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="1" selected>1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                        <span class="text-xs mr-3">:</span>
+                                        <select disabled name="minutes_out_2" id="minutes_out_2" class="bg-transparent text-xs appearance-none outline-none mr-4">
+                                            <option value="00" selected>00</option>
+                                            <option value="15">15</option>
+                                            <option value="30">30</option>
+                                            <option value="45">45</option>
+                                        </select>
+                                        <select disabled name="ampm_out_2" id="ampm_out_2" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="am" selected>AM</option>
+                                            <option value="pm">PM</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td class="p-5">
+                                    <input type="text" name="total_hours_2" id="total_hours_2" value="" class="w-20 shadow appearance-none border rounded"  onchange="javascript:processTotals();">
+                                </td>
+                                <td class="p-5">
+                                    <input type="text" name="total_cc_2" id="total_cc_2" value="0" class="w-20 shadow appearance-none border rounded" disabled>
+                                </td>
+                                <td class="p-5">
+                                    <input type="text" name="total_cash_2" id="total_cash_2" value="0" class="w-20 shadow appearance-none border rounded" disabled>
+                                </td>
+                            </tr>
+                            <tr id="row3" class="divide-y-2 divide-gray-500 divide-dashed">
+                                <td class="p-5">
+                                    <input type="text" name="name_3" id="name_3" value="" class="shadow appearance-none border rounded" placeholder="Jane Doe">
+                                </td>
+                                <td class="mt-2 p-5 w-40 bg-white rounded shadow">
+                                    <div class="flex">
+                                        <select disabled name="hours_start_3" id="hours_start_3" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5" selected>5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                        <span class="text-xs mr-3">:</span>
+                                        <select disabled name="minutes_start_3" id="minutes_start_3" class="bg-transparent text-xs appearance-none outline-none mr-4">
+                                            <option value="00">00</option>
+                                            <option value="15">15</option>
+                                            <option value="30" selected>30</option>
+                                            <option value="45">45</option>
+                                        </select>
+                                        <select disabled name="ampm_start_3" id="ampm_start_3" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="am">AM</option>
+                                            <option value="pm" selected>PM</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td class="mt-2 p-5 w-40 bg-white rounded shadow">
+                                    <div class="flex">
+                                        <select disabled name="hours_lunch_start_3" id="hours_lunch_start_3" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6" selected>6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                        <span class="text-xs mr-3">:</span>
+                                        <select disabled name="minutes_lunch_start_3" id="minutes_lunch_start_3" class="bg-transparent text-xs appearance-none outline-none mr-4">
+                                            <option value="00" selected>00</option>
+                                            <option value="15">15</option>
+                                            <option value="30">30</option>
+                                            <option value="45">45</option>
+                                        </select>
+                                        <select disabled name="ampm_lunch_start_3" id="ampm_lunch_start_3" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="am">AM</option>
+                                            <option value="pm" selected>PM</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td class="mt-2 p-5 w-40 bg-white rounded shadow">
+                                    <div class="flex">
+                                        <select disabled name="hours_lunch_end_3" id="hours_lunch_end_3" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6" selected>6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                        <span class="text-xs mr-3">:</span>
+                                        <select disabled name="minutes_lunch_end_3" id="minutes_lunch_end_3" class="bg-transparent text-xs appearance-none outline-none mr-4">
+                                            <option value="00">00</option>
+                                            <option value="15">15</option>
+                                            <option value="30" selected>30</option>
+                                            <option value="45">00</option>
+                                        </select>
+                                        <select disabled name="ampm_lunch_end_3" id="ampm_lunch_end_3" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="am">AM</option>
+                                            <option value="pm" selected>PM</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td class="mt-2 p-5 w-40 bg-white rounded shadow">
+                                    <div class="flex">
+                                        <select disabled name="hours_out_3" id="hours_out_3" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="1" selected>1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                        <span class="text-xs mr-3">:</span>
+                                        <select disabled name="minutes_out_3" id="minutes_out_3" class="bg-transparent text-xs appearance-none outline-none mr-4">
+                                            <option value="00" selected>00</option>
+                                            <option value="15">15</option>
+                                            <option value="30">30</option>
+                                            <option value="45">45</option>
+                                        </select>
+                                        <select disabled name="ampm_out_3" id="ampm_out_3" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="am" selected>AM</option>
+                                            <option value="pm">PM</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td class="p-5">
+                                    <input type="text" name="total_hours_3" id="total_hours_3" value="" class="w-20 shadow appearance-none border rounded"  onchange="javascript:processTotals();">
+                                </td>
+                                <td class="p-5">
+                                    <input type="text" name="total_cc_3" id="total_cc_3" value="0" class="w-20 shadow appearance-none border rounded" disabled>
+                                </td>
+                                <td class="p-5">
+                                    <input type="text" name="total_cash_3" id="total_cash_3" value="0" class="w-20 shadow appearance-none border rounded" disabled>
+                                </td>
+                            </tr>
+                            <tr id="row4" class="divide-y-2 divide-gray-500 divide-dashed">
+                                <td class="p-5">
+                                    <input type="text" name="name_4" id="name_4" value="" class="shadow appearance-none border rounded" placeholder="Jane Doe">
+                                </td>
+                                <td class="mt-2 p-5 w-40 bg-white rounded shadow">
+                                    <div class="flex">
+                                        <select disabled name="hours_start_4" id="hours_start_4" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5" selected>5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                        <span class="text-xs mr-3">:</span>
+                                        <select disabled name="minutes_start_4" id="minutes_start_4" class="bg-transparent text-xs appearance-none outline-none mr-4">
+                                            <option value="00">00</option>
+                                            <option value="15">15</option>
+                                            <option value="30" selected>30</option>
+                                            <option value="45">45</option>
+                                        </select>
+                                        <select disabled name="ampm_start_4" id="ampm_start_4" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="am">AM</option>
+                                            <option value="pm" selected>PM</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td class="mt-2 p-5 w-40 bg-white rounded shadow">
+                                    <div class="flex">
+                                        <select disabled name="hours_lunch_start_4" id="hours_lunch_start_4" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6" selected>6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                        <span class="text-xs mr-3">:</span>
+                                        <select disabled name="minutes_lunch_start_4" id="minutes_lunch_start_4" class="bg-transparent text-xs appearance-none outline-none mr-4">
+                                            <option value="00" selected>00</option>
+                                            <option value="15">15</option>
+                                            <option value="30">30</option>
+                                            <option value="45">45</option>
+                                        </select>
+                                        <select disabled name="ampm_lunch_start_4" id="ampm_lunch_start_4" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="am">AM</option>
+                                            <option value="pm" selected>PM</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td class="mt-2 p-5 w-40 bg-white rounded shadow">
+                                    <div class="flex">
+                                        <select disabled name="hours_lunch_end_4" id="hours_lunch_end_4" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6" selected>6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                        <span class="text-xs mr-3">:</span>
+                                        <select disabled name="minutes_lunch_end_4" id="minutes_lunch_end_4" class="bg-transparent text-xs appearance-none outline-none mr-4">
+                                            <option value="00">00</option>
+                                            <option value="15">15</option>
+                                            <option value="30" selected>30</option>
+                                            <option value="45">00</option>
+                                        </select>
+                                        <select disabled name="ampm_lunch_end_4" id="ampm_lunch_end_4" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="am">AM</option>
+                                            <option value="pm" selected>PM</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td class="mt-2 p-5 w-40 bg-white rounded shadow">
+                                    <div class="flex">
+                                        <select disabled name="hours_out_4" id="hours_out_4" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="1" selected>1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                        <span class="text-xs mr-3">:</span>
+                                        <select disabled name="minutes_out_4" id="minutes_out_4" class="bg-transparent text-xs appearance-none outline-none mr-4">
+                                            <option value="00" selected>00</option>
+                                            <option value="15">15</option>
+                                            <option value="30">30</option>
+                                            <option value="45">45</option>
+                                        </select>
+                                        <select disabled name="ampm_out_4" id="ampm_out_4" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="am" selected>AM</option>
+                                            <option value="pm">PM</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td class="p-5">
+                                    <input type="text" name="total_hours_4" id="total_hours_4" value="" class="w-20 shadow appearance-none border rounded"  onchange="javascript:processTotals();">
+                                </td>
+                                <td class="p-5">
+                                    <input type="text" name="total_cc_4" id="total_cc_4" value="0" class="w-20 shadow appearance-none border rounded" disabled>
+                                </td>
+                                <td class="p-5">
+                                    <input type="text" name="total_cash_4" id="total_cash_4" value="0" class="w-20 shadow appearance-none border rounded" disabled>
+                                </td>
+                            </tr>
+                            <tr id="row5" class="divide-y-2 divide-gray-500 divide-dashed">
+                                <td class="p-5">
+                                    <input type="text" name="name_5" id="name_5" value="" class="shadow appearance-none border rounded" placeholder="Jane Doe">
+                                </td>
+                                <td class="mt-2 p-5 w-40 bg-white rounded shadow">
+                                    <div class="flex">
+                                        <select disabled name="hours_start_5" id="hours_start_5" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5" selected>5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                        <span class="text-xs mr-3">:</span>
+                                        <select disabled name="minutes_start_5" id="minutes_start_5" class="bg-transparent text-xs appearance-none outline-none mr-4">
+                                            <option value="00">00</option>
+                                            <option value="15">15</option>
+                                            <option value="30" selected>30</option>
+                                            <option value="45">45</option>
+                                        </select>
+                                        <select disabled name="ampm_start_5" id="ampm_start_5" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="am">AM</option>
+                                            <option value="pm" selected>PM</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td class="mt-2 p-5 w-40 bg-white rounded shadow">
+                                    <div class="flex">
+                                        <select disabled name="hours_lunch_start_5" id="hours_lunch_start_5" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6" selected>6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                        <span class="text-xs mr-3">:</span>
+                                        <select disabled name="minutes_lunch_start_5" id="minutes_lunch_start_5" class="bg-transparent text-xs appearance-none outline-none mr-4">
+                                            <option value="00" selected>00</option>
+                                            <option value="15">15</option>
+                                            <option value="30">30</option>
+                                            <option value="45">45</option>
+                                        </select>
+                                        <select disabled name="ampm_lunch_start_5" id="ampm_lunch_start_5" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="am">AM</option>
+                                            <option value="pm" selected>PM</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td class="mt-2 p-5 w-40 bg-white rounded shadow">
+                                    <div class="flex">
+                                        <select disabled name="hours_lunch_end_5" id="hours_lunch_end_5" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6" selected>6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                        <span class="text-xs mr-3">:</span>
+                                        <select disabled name="minutes_lunch_end_5" id="minutes_lunch_end_5" class="bg-transparent text-xs appearance-none outline-none mr-4">
+                                            <option value="00">00</option>
+                                            <option value="15">15</option>
+                                            <option value="30" selected>30</option>
+                                            <option value="45">00</option>
+                                        </select>
+                                        <select disabled name="ampm_lunch_end_5" id="ampm_lunch_end_5" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="am">AM</option>
+                                            <option value="pm" selected>PM</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td class="mt-2 p-5 w-40 bg-white rounded shadow">
+                                    <div class="flex">
+                                        <select disabled name="hours_out_5" id="hours_out_5" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="1" selected>1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                        <span class="text-xs mr-3">:</span>
+                                        <select disabled name="minutes_out_5" id="minutes_out_5" class="bg-transparent text-xs appearance-none outline-none mr-4">
+                                            <option value="00" selected>00</option>
+                                            <option value="15">15</option>
+                                            <option value="30">30</option>
+                                            <option value="45">45</option>
+                                        </select>
+                                        <select disabled name="ampm_out_5" id="ampm_out_5" class="bg-transparent text-xs appearance-none outline-none">
+                                            <option value="am" selected>AM</option>
+                                            <option value="pm">PM</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td class="p-5">
+                                    <input type="text" name="total_hours_5" id="total_hours_5" value="" class="w-20 shadow appearance-none border rounded"  onchange="javascript:processTotals();">
+                                </td>
+                                <td class="p-5">
+                                    <input type="text" name="total_cc_5" id="total_cc_5" value="0" class="w-20 shadow appearance-none border rounded" disabled>
+                                </td>
+                                <td class="p-5">
+                                    <input type="text" name="total_cash_5" id="total_cash_5" value="0" class="w-20 shadow appearance-none border rounded" disabled>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td id="total_hours_check"></td>
+                                <td id="total_cc_check"></td>
+                                <td id="total_cash_check"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function cashHourly(){
+            let ttlcash = parseFloat(document.getElementById('total_cash').value);
+            let ttlhrs = parseFloat(document.getElementById('total_hours').innerHTML);
+
+            if (!ttlcash) {
+                return 0;
+            }
+
+            let cashhrly = parseFloat(ttlcash / ttlhrs);
+
+            document.getElementById('total_cash_hourly').innerHTML = cashhrly.toFixed(2);
+        }
+
+        function cashTips(rowId){
+            // cash hourly * total hours
+            let ttlcashhr = parseFloat(document.getElementById('total_cash_hourly').innerHTML);
+            let ttlhrs = parseFloat(document.getElementById('total_hours_'+rowId).value);
+
+            if (ttlhrs) {
+                let cashtips = parseFloat(ttlcashhr * ttlhrs);
+
+                document.getElementById('total_cash_'+rowId).value = Math.floor(cashtips);
+            } else {
+                document.getElementById('total_cash_'+rowId).value = 0;
+            }
+        }
+
+        function ccHourly() {
+            let ttlcc = parseFloat(document.getElementById('total_cc').value);
+            let ttlhrs = parseFloat(document.getElementById('total_hours').innerHTML);
+
+            if (!ttlcc) {
+                return 0;
+            }
+
+            let cchrly = parseFloat(ttlcc / ttlhrs);
+
+            document.getElementById('total_cc_hourly').innerHTML = cchrly.toFixed(2);
+        }
+
+        function ccTips(rowId){
+            // cc hourly * total hours
+            let ttlcchr = parseFloat(document.getElementById('total_cc_hourly').innerHTML);
+            let ttlhrs = parseFloat(document.getElementById('total_hours_'+rowId).value);
+
+            if (ttlhrs) {
+                let cctips = parseFloat(ttlcchr * ttlhrs);
+
+                document.getElementById('total_cc_'+rowId).value = Math.floor(cctips);
+            } else {
+                document.getElementById('total_cc_'+rowId).value = 0;
+            }
+        }
+
+        function doFinalChecks(){
+            // #total_hours_check
+            // #total_cc_check
+                let ttlcc = parseFloat(document.getElementById('total_cc').value);
+
+                if (ttlcc) {
+                    // get total of all
+                    var ttlcc_grp = 0;
+                    for (let i = 1; i < 6; i++) {
+                        if (document.getElementById('total_cc_'+i).value != '') {
+                            ttlcc_grp += parseFloat(document.getElementById('total_cc_'+i).value);
+                        }
+                    }
+                    
+                    if(ttlcc_grp > ttlcc){
+                        document.getElementById('total_cc_check').innerHTML = '<span class="text-red-600">Whoops!!<br>' + ttlcc_grp + ' was given, only had ' + ttlcc + '!</span>';
+                    }else{
+                        let rmnn = ttlcc - ttlcc_grp;
+                        document.getElementById('total_cc_check').innerHTML = '<span class="text-green-600 font-black">OK.<br>' + (rmnn.toFixed(2) + ' remaining.') + '</span>';
+                        if (rmnn > 0) {
+                            document.getElementById('results_cc').innerHTML = '<div class="text-green-600 font-black">CC: ' + rmnn.toFixed(2) + ' remaining.</div>';
+                        }
+                    }
+                } else {
+                    document.getElementById('results_cc').innerHTML = '<div class="text-red-600 font-black">CC: No CC!</div>';
+                }
+
+            // #total_cash_check
+                let ttlcash = parseFloat(document.getElementById('total_cash').value);
+
+                if (ttlcash) {
+                    var ttlcash_grp = 0;
+
+                    for (let ii = 1; ii < 6; ii++) {
+                        if (document.getElementById('total_cash_'+ii).value != '') {
+                            ttlcash_grp += parseFloat(document.getElementById('total_cash_'+ii).value);
+                        }
+                    }
+
+                    if(ttlcash_grp > ttlcash){
+                        document.getElementById('total_cash_check').innerHTML = '<span class="text-red-600">Whoops!!<br>' + ttlcash_grp + ' was given, only had ' + ttlcash + '!</span>';
+                    }else{
+                        let rmn = ttlcash - ttlcash_grp;
+                        document.getElementById('total_cash_check').innerHTML = '<span class="text-green-600 font-black">OK.<br>' + (rmn.toFixed(2) + ' remaining.') + '</span>';
+                        if (rmn > 0) {
+                            document.getElementById('results_cash').innerHTML = '<div class="text-green-600 font-black">Cash: ' + rmn.toFixed(2) + ' remaining.</div>';
+                        }
+                    }
+                } else {
+                    document.getElementById('results_cash').innerHTML = '<div class="text-red-600 font-black">Cash: No Cash!</div>';
+                }
+                // get total of all
+        }
+
+        function processTotals() {
+            // get totals from input
+            let total_cc = parseFloat(document.getElementById('total_cc').value);
+            let total_cash = parseFloat(document.getElementById('total_cash').value);
+
+            // set total hours
+            ttlhrs = getTotalHours();
+            document.getElementById('total_hours').innerHTML = ttlhrs;
+
+            // set cc hourly
+            ccHourly();
+
+            // set cash hourly
+            cashHourly();
+
+            for (let i = 1; i < 6; i++) {
+                if (document.getElementById('total_hours_'+i).value != '') {
+                    ccTips(i);
+                    cashTips(i);
+                }
+            }
+
+            doFinalChecks();
+        }
+
+        function getTotalHours(){
+            let ttl = 0.00;
+
+            for (let i = 1; i < 6; i++) {
+                if (parseFloat(document.getElementById('total_hours_'+i).value) > 0) {
+                    ttl += parseFloat(document.getElementById('total_hours_'+i).value);
+                }
+            }
+
+            return ttl;
+        }
+    </script>
+</body>
+</html>
