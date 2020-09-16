@@ -27,20 +27,26 @@
                     <h1 class="text-6xl"><!--<span class="font-black">Beauty &amp; Essex</span> -->Tip Pool Calculator</h1>
                 </div>
 
-                <div class="flex bg-gray-200">
-                    <div class="flex-1 text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
+                <div class="flex bg-gray-200 shadow">
+                    <div class="flex-1 text-gray-700 text-center px-4 py-2 m-2">
                         <table>
                             <tr><td class="p-6 text-black-700 text-opacity-75 font-black">TOTAL CC:</td><td class="p-6"><input type="number" min="0" step="0.01" name="total_cc" id="total_cc" value="" class="focus:underline w-20 shadow appearance-none border rounded"  onchange="javascript:processTotals();" autofocus></td></tr>
                             <tr><td class="p-6 text-black-700 text-opacity-75 font-black">TOTAL CASH:</td><td class="p-6"><input type="number" min="0" step="0.01" name="total_cash" id="total_cash" value="" class="focus:underline w-20 shadow appearance-none border rounded" onchange="javascript:processTotals();"></td></tr>
                         </table>
+
+                        <div class="">
+                            <button onclick="javascript:processTotals();" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                Calculate
+                            </button>
+                        </div>
                     </div>
                     <div class="flex-1 text-gray-700 px-4 py-2 m-2">
                         <div class="">
                             <table>
-                                <tr><td>Employees in Pool:</td><td><span id="employee_amount" class="">0</span></td></tr>
-                                <tr><td>Total Hours:</td><td><span id="total_hours" class="">0</span></td></tr>
-                                <tr><td>CC Hourly:</td><td><span id="total_cc_hourly" class="">0</span></td></tr>
-                                <tr><td>Cash Hourly:</td><td><span id="total_cash_hourly" class="">0</span></td></tr>
+                                <tr><td class="p-2 text-black-400 font-black">Employees in Pool:</td><td class="text-right"><span id="employee_amount" class="">0</span></td></tr>
+                                <tr><td class="p-2 text-black-400 font-black">Total Hours:</td><td class="text-right"><span id="total_hours" class="">0</span></td></tr>
+                                <tr><td class="p-2 text-black-400 font-black">CC Hourly:</td><td class="text-right"><span id="total_cc_hourly" class="">0</span></td></tr>
+                                <tr><td class="p-2 text-black-400 font-black">Cash Hourly:</td><td class="text-right"><span id="total_cash_hourly" class="">0</span></td></tr>
                             </table>
                         </div>
                         <div id="results" class="mt-20">
@@ -51,31 +57,31 @@
                     <div class="flex-1 text-gray-700 px-4 py-2 m-2">
                         <table>
                             <tr>
-                                <td>CC Provided:</td>
-                                <td><span id="cc_provided">0.00</span></td>
+                                <td class="p-2 text-black-400 font-black">CC Provided:</td>
+                                <td class="text-right"><span id="cc_provided">0.00</span></td>
                             </tr>
                             <tr>
-                                <td>CC Distributed:</td>
-                                <td><span id="cc_distributed">0.00</span></td>
+                                <td class="p-2 text-black-400 font-black">CC Distributed:</td>
+                                <td class="text-right"><span id="cc_distributed">0.00</span></td>
                             </tr>
                             <tr>
-                                <td>CC Remaining:</td>
-                                <td><span id="cc_remaining">0.00</span></td>
+                                <td class="p-2 text-black-400 font-black">CC Remaining:</td>
+                                <td class="text-right"><span id="cc_remaining">0.00</span></td>
                             </tr>
                             <tr>
-                                <td>Cash Provided:</td>
-                                <td><span id="cash_provided">0.00</span></td>
+                                <td class="p-2 text-black-400 font-black">Cash Provided:</td>
+                                <td class="text-right"><span id="cash_provided">0.00</span></td>
                             </tr>
                             <tr>
-                                <td>Cash Distributed:</td>
-                                <td><span id="cash_distributed">0.00</span></td>
+                                <td class="p-2 text-black-400 font-black">Cash Distributed:</td>
+                                <td class="text-right"><span id="cash_distributed">0.00</span></td>
                             </tr>
                             <tr>
-                                <td>Cash Remaining:</td>
-                                <td><span id="cash_remaining">0.00</span></td>
+                                <td class="p-2 text-black-400 font-black">Cash Remaining:</td>
+                                <td class="text-right"><span id="cash_remaining">0.00</span></td>
                             </tr>
                         </table>
-                        <!-- <div id="results_final"></div> -->
+                        
                     </div>
                 </div>
             
