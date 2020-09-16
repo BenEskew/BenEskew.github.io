@@ -30,8 +30,8 @@
                 <div class="flex bg-gray-200">
                     <div class="flex-1 text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
                         <table>
-                            <tr><td class="p-6 text-black-700 text-opacity-75 font-black">TOTAL CC:</td><td class="p-6"><input type="text" name="total_cc" id="total_cc" value="" class="focus:underline w-20 shadow appearance-none border rounded"  onchange="javascript:processTotals();" autofocus></td></tr>
-                            <tr><td class="p-6 text-black-700 text-opacity-75 font-black">TOTAL CASH:</td><td class="p-6"><input type="text" name="total_cash" id="total_cash" value="" class="focus:underline w-20 shadow appearance-none border rounded" onchange="javascript:processTotals();"></td></tr>
+                            <tr><td class="p-6 text-black-700 text-opacity-75 font-black">TOTAL CC:</td><td class="p-6"><input type="number" min="0" name="total_cc" id="total_cc" value="" class="focus:underline w-20 shadow appearance-none border rounded"  onchange="javascript:processTotals();" autofocus></td></tr>
+                            <tr><td class="p-6 text-black-700 text-opacity-75 font-black">TOTAL CASH:</td><td class="p-6"><input type="number" min="0" name="total_cash" id="total_cash" value="" class="focus:underline w-20 shadow appearance-none border rounded" onchange="javascript:processTotals();"></td></tr>
                         </table>
                     </div>
                     <div class="flex-1 text-gray-700 px-4 py-2 m-2">
@@ -217,13 +217,13 @@
                                     </div>
                                 </td>
                                 <td class="p-5">
-                                    <input type="text" name="total_hours_1" id="total_hours_1" value="7.5" class="w-20 shadow appearance-none border rounded"  onchange="javascript:processTotals();">
+                                    <input type="number" min="0" name="total_hours_1" id="total_hours_1" value="7.5" class="w-20 shadow appearance-none border rounded"  onchange="javascript:processTotals();">
                                 </td>
                                 <td class="p-5">
-                                    <input type="text" name="total_cc_1" id="total_cc_1" value="0" class="w-20 shadow appearance-none border rounded" disabled>
+                                    <input type="number" min="0" name="total_cc_1" id="total_cc_1" value="0" class="w-20 shadow appearance-none border rounded" disabled>
                                 </td>
                                 <td class="p-5">
-                                    <input type="text" name="total_cash_1" id="total_cash_1" value="0" class="w-20 shadow appearance-none border rounded" disabled>
+                                    <input type="number" min="0" name="total_cash_1" id="total_cash_1" value="0" class="w-20 shadow appearance-none border rounded" disabled>
                                 </td>
                             </tr>
                             <tr id="row2" class="divide-y-2 divide-gray-500 divide-dashed">
@@ -347,13 +347,13 @@
                                     </div>
                                 </td>
                                 <td class="p-5">
-                                    <input type="text" name="total_hours_2" id="total_hours_2" value="" class="w-20 shadow appearance-none border rounded"  onchange="javascript:processTotals();">
+                                    <input type="number" min="0" name="total_hours_2" id="total_hours_2" value="" class="w-20 shadow appearance-none border rounded"  onchange="javascript:processTotals();">
                                 </td>
                                 <td class="p-5">
-                                    <input type="text" name="total_cc_2" id="total_cc_2" value="0" class="w-20 shadow appearance-none border rounded" disabled>
+                                    <input type="number" min="0" name="total_cc_2" id="total_cc_2" value="0" class="w-20 shadow appearance-none border rounded" disabled>
                                 </td>
                                 <td class="p-5">
-                                    <input type="text" name="total_cash_2" id="total_cash_2" value="0" class="w-20 shadow appearance-none border rounded" disabled>
+                                    <input type="number" min="0" name="total_cash_2" id="total_cash_2" value="0" class="w-20 shadow appearance-none border rounded" disabled>
                                 </td>
                             </tr>
                             <tr id="row3" class="divide-y-2 divide-gray-500 divide-dashed">
@@ -477,13 +477,13 @@
                                     </div>
                                 </td>
                                 <td class="p-5">
-                                    <input type="text" name="total_hours_3" id="total_hours_3" value="" class="w-20 shadow appearance-none border rounded"  onchange="javascript:processTotals();">
+                                    <input type="number" min="0" name="total_hours_3" id="total_hours_3" value="" class="w-20 shadow appearance-none border rounded"  onchange="javascript:processTotals();">
                                 </td>
                                 <td class="p-5">
-                                    <input type="text" name="total_cc_3" id="total_cc_3" value="0" class="w-20 shadow appearance-none border rounded" disabled>
+                                    <input type="number" min="0" name="total_cc_3" id="total_cc_3" value="0" class="w-20 shadow appearance-none border rounded" disabled>
                                 </td>
                                 <td class="p-5">
-                                    <input type="text" name="total_cash_3" id="total_cash_3" value="0" class="w-20 shadow appearance-none border rounded" disabled>
+                                    <input type="number" min="0" name="total_cash_3" id="total_cash_3" value="0" class="w-20 shadow appearance-none border rounded" disabled>
                                 </td>
                             </tr>
                             <tr id="row4" class="divide-y-2 divide-gray-500 divide-dashed">
@@ -607,13 +607,13 @@
                                     </div>
                                 </td>
                                 <td class="p-5">
-                                    <input type="text" name="total_hours_4" id="total_hours_4" value="" class="w-20 shadow appearance-none border rounded"  onchange="javascript:processTotals();">
+                                    <input type="number" min="0" name="total_hours_4" id="total_hours_4" value="" class="w-20 shadow appearance-none border rounded"  onchange="javascript:processTotals();">
                                 </td>
                                 <td class="p-5">
-                                    <input type="text" name="total_cc_4" id="total_cc_4" value="0" class="w-20 shadow appearance-none border rounded" disabled>
+                                    <input type="number" min="0" name="total_cc_4" id="total_cc_4" value="0" class="w-20 shadow appearance-none border rounded" disabled>
                                 </td>
                                 <td class="p-5">
-                                    <input type="text" name="total_cash_4" id="total_cash_4" value="0" class="w-20 shadow appearance-none border rounded" disabled>
+                                    <input type="number" min="0" name="total_cash_4" id="total_cash_4" value="0" class="w-20 shadow appearance-none border rounded" disabled>
                                 </td>
                             </tr>
                             <tr id="row5" class="divide-y-2 divide-gray-500 divide-dashed">
@@ -737,13 +737,13 @@
                                     </div>
                                 </td>
                                 <td class="p-5">
-                                    <input type="text" name="total_hours_5" id="total_hours_5" value="" class="w-20 shadow appearance-none border rounded"  onchange="javascript:processTotals();">
+                                    <input type="number" min="0" name="total_hours_5" id="total_hours_5" value="" class="w-20 shadow appearance-none border rounded"  onchange="javascript:processTotals();">
                                 </td>
                                 <td class="p-5">
-                                    <input type="text" name="total_cc_5" id="total_cc_5" value="0" class="w-20 shadow appearance-none border rounded" disabled>
+                                    <input type="number" min="0" name="total_cc_5" id="total_cc_5" value="0" class="w-20 shadow appearance-none border rounded" disabled>
                                 </td>
                                 <td class="p-5">
-                                    <input type="text" name="total_cash_5" id="total_cash_5" value="0" class="w-20 shadow appearance-none border rounded" disabled>
+                                    <input type="number" min="0" name="total_cash_5" id="total_cash_5" value="0" class="w-20 shadow appearance-none border rounded" disabled>
                                 </td>
                             </tr>
                             <tr>
@@ -758,7 +758,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <!-- <input type="hidden" name="employee_amount" id="employee_amount" value="0"> -->
+                    
                 </form>
 
             </div>
@@ -895,7 +895,11 @@
                 }
                 // "Cash Amount Provided: ###"
                 if (ttlcash > 0) {
-                    document.getElementById('cash_provided').innerHTML = ttlcash.toFixed(2);
+                    if (ttlcash.toFixed(2) == 'Infinity') {
+                        document.getElementById('cash_provided').innerHTML = '0.00';
+                    } else {
+                        document.getElementById('cash_provided').innerHTML = ttlcash.toFixed(2);
+                    }
                 } else {
                     document.getElementById('cash_provided').innerHTML = '0.00';
                 }
@@ -905,7 +909,11 @@
                 // "Cash Amount Remaining: ###"
                 if (ttlcash > ttlcash_grp) {
                     let rmcash = ttlcash - ttlcash_grp;
-                    document.getElementById('cash_remaining').innerHTML = rmcash.toFixed(2);
+                    if (rmcash.toFixed(2) == 'Infinity') {
+                        document.getElementById('cash_remaining').innerHTML = '0.00';
+                    } else {
+                        document.getElementById('cash_remaining').innerHTML = rmcash.toFixed(2);
+                    }
                 }
         }
 
