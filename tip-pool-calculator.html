@@ -998,7 +998,7 @@
                     }
                     
                     if(ttlcc_grp.toFixed(2) > ttlcc){
-                        document.getElementById('total_cc_check').innerHTML = '<span class="text-red-600">Whoops!!<br>' + ttlcc_grp + ' was given, only had ' + ttlcc + '!</span>';
+                        document.getElementById('total_cc_check').innerHTML = '<span class="text-red-600">Whoops!!<br>' + ttlcc_grp.toFixed(2) + ' was given, only had ' + ttlcc + '!</span>';
                     }else{
                         let rmnn = ttlcc - ttlcc_grp;
                         document.getElementById('total_cc_check').innerHTML = '<span class="text-green-600 font-black">OK.<br>' + (rmnn.toFixed(2) + ' remaining.') + '</span>';
