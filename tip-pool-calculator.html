@@ -997,7 +997,7 @@
                         }
                     }
                     
-                    if(ttlcc_grp > ttlcc){
+                    if(ttlcc_grp.toFixed(2) > ttlcc){
                         document.getElementById('total_cc_check').innerHTML = '<span class="text-red-600">Whoops!!<br>' + ttlcc_grp + ' was given, only had ' + ttlcc + '!</span>';
                     }else{
                         let rmnn = ttlcc - ttlcc_grp;
@@ -1021,7 +1021,7 @@
                         }
                     }
 
-                    if(ttlcash_grp > ttlcash){
+                    if(ttlcash_grp.toFixed(2) > ttlcash){
                         document.getElementById('total_cash_check').innerHTML = '<span class="text-red-600">Whoops!!<br>' + ttlcash_grp + ' was given, only had ' + ttlcash + '!</span>';
                     }else{
                         let rmn = ttlcash - ttlcash_grp;
