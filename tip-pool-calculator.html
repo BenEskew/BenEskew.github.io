@@ -956,7 +956,7 @@
 
             let cchrly = parseFloat(ttlcc / ttlhrs);
 
-            document.getElementById('total_cc_hourly').innerHTML = cchrly.toFixed(2);
+            document.getElementById('total_cc_hourly').innerHTML = cchrly;
         }
 
         function ccTips(rowId){
@@ -967,7 +967,7 @@
             if (ttlhrs && ttlcchr) {
                 let cctips = parseFloat(ttlcchr * ttlhrs);
 
-                document.getElementById('total_cc_'+rowId).value = Math.floor(cctips);
+                document.getElementById('total_cc_'+rowId).value = cctips.toFixed(2);
             } else {
                 document.getElementById('total_cc_'+rowId).value = 0;
             }
