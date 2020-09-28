@@ -25,22 +25,14 @@
           <svg class="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/></svg>
           <span class="font-semibold text-xl tracking-tight">Tip Pool Calculator (<em>for Bussers</em>)</span>
         </div>
-        <!-- <div class="block lg:hidden">
-          <button class="flex items-center px-3 py-2 border rounded text-purple-200 border-purple-400 hover:text-white hover:border-white">
-            <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-          </button>
-        </div> -->
         <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
           <div class="text-sm lg:flex-grow">
-            <!-- <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-purple-200 hover:text-white mr-4">
-              Docs
+            <a href="#calculator" class=" mt-4 lg:inline-block lg:mt-0 text-purple-200 hover:text-white mr-4">
+              Calculator
             </a>
-            <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-purple-200 hover:text-white mr-4">
-              Examples
+            <a href="#checklists" class=" mt-4 lg:inline-block lg:mt-0 text-purple-200 hover:text-white">
+              Checklists
             </a>
-            <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-purple-200 hover:text-white">
-              Blog
-            </a> -->
           </div>
           <div>
             <a href="https://github.com/BenEskew/BenEskew.github.io/blob/master/tip-pool-calculator.html" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-purple-500 hover:bg-white mt-4 lg:mt-0">View Source</a>
@@ -48,7 +40,7 @@
         </div>
     </nav>
 
-    <div class="w-full max-w-xs pt-8 pb-8">
+    <div class="w-full max-w-xs pt-8 pb-8" id="calculator">
         <form class="w-full max-w-sm">
             <div class="md:flex md:items-center mb-6 p-2 m-2">
                 <div class="md:w-1/3">
@@ -231,7 +223,7 @@
         </form>
     </div>
 
-    <div class="flex">
+    <div class="flex" id="calculator-results">
         <div class="container mx-auto">
             <div class="m-5">
                 <form class="mt-8">
@@ -918,7 +910,7 @@
                     <hr>
                 </div>
 
-                <form class="w-full max-w-sm">
+                <form class="w-full max-w-sm" id="checklists">
                     <div class="md:flex md:items-center mb-6">
                         <div class="md:w-1/3"></div>
                         <h3 class="md:w-2/3 block text-lg font-black">Closing Checklist:</h3>
@@ -993,13 +985,20 @@
                             <span class="text-md">Close &amp; Lock Doors</span>
                         </label>
                     </div>
+                    <div class="md:flex md:items-center mb-6">
+                        <div class="md:w-1/3"></div>
+                        <label class="md:w-2/3 block text-black-500 font-bold">
+                            <input type="checkbox" class="mr-2 leading-tight">
+                            <span class="text-md">Check Bathrooms</span>
+                        </label>
+                    </div>
                 </form>
 
                 <div class="p-8">
                     <hr>
                 </div>
 
-                <form class="w-full max-w-sm">
+                <form class="w-full max-w-sm" id="tips-reminders">
                     <div class="md:flex md:items-center mb-6">
                         <div class="md:w-1/3"></div>
                         <h3 class="md:w-2/3 block text-lg font-black">Tips Reminders:</h3>
@@ -1042,7 +1041,7 @@
                 </form>
 
                 <div class="ml-4 text-center text-sm text-gray-500 sm:text-left sm:ml-0">
-                    Build v0.3.3 Benjamin S. Eskew
+                    Build v0.3.6 Benjamin S. Eskew
                 </div>
 
             </div>
@@ -1050,9 +1049,37 @@
     </div>
 
     <script>
-        function cashHourly(){
-            let ttlcash = parseFloat(document.getElementById('total_cash').value);
-            let ttlhrs = parseFloat(document.getElementById('total_hours').innerHTML);
+        function getCashHourly() {
+            return parseFloat(document.getElementById('total_cash_hourly').innerHTML);
+        }
+
+        function getCCHourly() {
+            return parseFloat(document.getElementById('total_cc_hourly').innerHTML);
+        }
+
+        function getTotalCash() {
+            return parseFloat(document.getElementById('total_cash').value);
+        }
+
+        function getTotalCC() {
+            return parseFloat(document.getElementById('total_cc').value);
+        }
+
+        function getTotalHours() {
+            return parseFloat(document.getElementById('total_hours').innerHTML);
+        }
+
+        function setCashHourly(cashHourly) {
+            document.getElementById('total_cash_hourly').innerHTML = cashHourly.toFixed(2);
+        }
+
+        function setCCHourly(ccHourly) {
+            document.getElementById('total_cc_hourly').innerHTML = ccHourly;
+        }
+
+        function cashHourly() {
+            let ttlcash = getTotalCash();
+            let ttlhrs = getTotalHours();
 
             if (!ttlcash || !ttlhrs) {
                 return 0;
@@ -1060,12 +1087,12 @@
 
             let cashhrly = parseFloat(ttlcash / ttlhrs);
 
-            document.getElementById('total_cash_hourly').innerHTML = cashhrly.toFixed(2);
+            setCashHourly(cashhrly);
         }
 
         function cashTips(rowId){
             // cash hourly * total hours
-            let ttlcashhr = parseFloat(document.getElementById('total_cash_hourly').innerHTML);
+            let ttlcashhr = getCashHourly();
             let ttlhrs = parseFloat(document.getElementById('total_hours_'+rowId).value);
 
             if (ttlhrs) {
@@ -1078,8 +1105,8 @@
         }
 
         function ccHourly() {
-            let ttlcc = parseFloat(document.getElementById('total_cc').value);
-            let ttlhrs = parseFloat(document.getElementById('total_hours').innerHTML);
+            let ttlcc = getTotalCC();
+            let ttlhrs = getTotalHours();
 
             if (!ttlcc) {
                 return 0;
@@ -1087,12 +1114,12 @@
 
             let cchrly = parseFloat(ttlcc / ttlhrs);
 
-            document.getElementById('total_cc_hourly').innerHTML = cchrly;
+            setCCHourly(cchrly);
         }
 
         function ccTips(rowId){
             // cc hourly * total hours
-            let ttlcchr = parseFloat(document.getElementById('total_cc_hourly').innerHTML);
+            let ttlcchr = getCCHourly();
             let ttlhrs = parseFloat(document.getElementById('total_hours_'+rowId).value);
 
             if (ttlhrs && ttlcchr) {
@@ -1117,7 +1144,7 @@
         function doFinalChecks(){
             // #total_hours_check
             // #total_cc_check
-                let ttlcc = parseFloat(document.getElementById('total_cc').value);
+                let ttlcc = getTotalCC();
 
                 if (ttlcc) {
                     // get total of all
@@ -1142,7 +1169,7 @@
                 }
 
             // #total_cash_check
-                let ttlcash = parseFloat(document.getElementById('total_cash').value);
+                let ttlcash = getTotalCash();
                 let ttlcash_grp = 0.00;
 
                 if (ttlcash) {
@@ -1203,29 +1230,33 @@
 
         function processClear() {
             // employee_amount (int)
-            document.getElementById('employee_amount').innerHTML = 0;
+            clearElement('employee_amount', 0)
             // total_hours (float)
-            document.getElementById('total_hours').innerHTML = 0.0;
+            clearElement('total_hours', 0.0);
             // total_cc_hourly (float)
-            document.getElementById('total_cc_hourly').innerHTML = 0;
+            clearElement('total_cc_hourly', 0.00);
             // total_cash_hourly (float)
-            document.getElementById('total_cash_hourly').innerHTML = 0;
-            // results_cc - clear
-            //document.getElementById('results_cc').innerHTML = '';
-            // results_cash - clear
-            //document.getElementById('results_cash').innerHTML = '';
+            clearElement('total_cash_hourly', 0.00);
             // cc_provided (float)
-            document.getElementById('cc_provided').innerHTML = '0.00';
+            clearElement('cc_provided', 0.00);
             // cc_distributed (float)
-            document.getElementById('cc_distributed').innerHTML = '0.00';
+            clearElement('cc_distributed', 0.00);
             // cc_remaining (float)
-            document.getElementById('cc_remaining').innerHTML = '0.00';
+            clearElement('cc_remaining', 0.00);
             // cash_provided (float)
-            document.getElementById('cash_provided').innerHTML = '0.00';
+            clearElement('cash_provided', 0.00);
             // cash_distributed (float)
-            document.getElementById('cash_distributed').innerHTML = '0.00';
+            clearElement('cash_distributed', 0.00);
             // cash_remaining (float)
-            document.getElementById('cash_remaining').innerHTML = '0.00';
+            clearElement('cash_remaining', 0.00);
+        }
+
+        function clearElement(id, insertWith) {
+            document.getElementById(id).innerHTML = insertWith;
+        }
+
+        function clearInput(id, insertWith) {
+            document.getElementById(id).value = insertWith;
         }
 
         function processTotals() {
@@ -1233,11 +1264,11 @@
             processClear();
 
             // get totals from input
-            let total_cc = parseFloat(document.getElementById('total_cc').value);
-            let total_cash = parseFloat(document.getElementById('total_cash').value);
+            let total_cc = getTotalCC();
+            let total_cash = getTotalCash();
 
             // set total hours
-            ttlhrs = getTotalHours();
+            ttlhrs = getTotalsHours();
             document.getElementById('total_hours').innerHTML = ttlhrs;
 
             // set cc hourly
@@ -1258,7 +1289,7 @@
             doFinalChecks();
         }
 
-        function getTotalHours(){
+        function getTotalsHours(){
             let ttl = 0.00;
             let ttl_employees = 0;
 
