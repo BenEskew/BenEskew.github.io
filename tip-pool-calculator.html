@@ -1177,7 +1177,7 @@
             let ttlcc = getTotalCC();
             let ttlhrs = getTotalHours();
 
-            if (!ttlcc) {
+            if (!ttlcc || !ttlhrs) {
                 return 0;
             }
 
