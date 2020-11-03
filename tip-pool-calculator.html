@@ -1110,7 +1110,7 @@
                 </form>
 
                 <div class="ml-4 text-center text-sm text-gray-500 sm:text-left sm:ml-0">
-                    Build v. 0.5.0 Benjamin S. Eskew
+                    Build v. 0.5.13 Benjamin S. Eskew
                 </div>
 
             </div>
@@ -1118,24 +1118,32 @@
     </div>
 
     <script>
+        function getHTML(id) {
+            return parseFloat(document.getElementById(id).innerHTML);
+        }
+
+        function getValue(id) {
+            return parseFloat(document.getElementById(id).value);
+        }
+
         function getCashHourly() {
-            return parseFloat(document.getElementById('total_cash_hourly').innerHTML);
+            return getHTML('total_cash_hourly');
         }
 
         function getCCHourly() {
-            return parseFloat(document.getElementById('total_cc_hourly').innerHTML);
+            return getHTML('total_cc_hourly');
         }
 
         function getTotalCash() {
-            return parseFloat(document.getElementById('total_cash').value);
+            return getValue('total_cash');
         }
 
         function getTotalCC() {
-            return parseFloat(document.getElementById('total_cc').value);
+            return getValue('total_cc');
         }
 
         function getTotalHours() {
-            return parseFloat(document.getElementById('total_hours').innerHTML);
+            return getHTML('total_hours');
         }
 
         function setCashHourly(cashHourly) {
