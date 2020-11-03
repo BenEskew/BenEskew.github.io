@@ -1110,7 +1110,7 @@
                 </form>
 
                 <div class="ml-4 text-center text-sm text-gray-500 sm:text-left sm:ml-0">
-                    Build v0.4.3 Benjamin S. Eskew
+                    Build v0.5.0 Benjamin S. Eskew
                 </div>
 
             </div>
@@ -1186,7 +1186,7 @@
             setCCHourly(cchrly);
         }
 
-        function ccTips(rowId){
+        function ccTips(rowId) {
             // cc hourly * total hours
             let ttlcchr = getCCHourly();
             let ttlhrs = parseFloat(document.getElementById('total_hours_'+rowId).value);
@@ -1210,7 +1210,7 @@
             }
         }
 
-        function doFinalChecks(){
+        function doFinalChecks() {
             // #total_hours_check
             // #total_cc_check
                 let ttlcc = getTotalCC();
@@ -1224,9 +1224,9 @@
                         }
                     }
                     
-                    if(ttlcc_grp.toFixed(2) > ttlcc){
+                    if (ttlcc_grp.toFixed(2) > ttlcc) {
                         document.getElementById('total_cc_check').innerHTML = '<span class="text-red-600">Warning!<br>' + ttlcc_grp.toFixed(2) + ' was given, only had ' + ttlcc + '!</span>';
-                    }else{
+                    } else {
                         let rmnn = ttlcc - ttlcc_grp;
                         document.getElementById('total_cc_check').innerHTML = '<span class="text-green-600 font-black">OK.<br>' + (rmnn.toFixed(2) + ' remaining.') + '</span>';
                         if (rmnn > 0) {
@@ -1248,9 +1248,9 @@
                         }
                     }
 
-                    if(ttlcash_grp.toFixed(2) > ttlcash){
+                    if (ttlcash_grp.toFixed(2) > ttlcash) {
                         document.getElementById('total_cash_check').innerHTML = '<span class="text-red-600">Warning!<br>' + ttlcash_grp + ' was given, only had ' + ttlcash + '!</span>';
-                    }else{
+                    } else {
                         let rmn = ttlcash - ttlcash_grp;
                         document.getElementById('total_cash_check').innerHTML = '<span class="text-green-600 font-black">OK.<br>' + (rmn.toFixed(2) + ' remaining.') + '</span>';
                         if (rmn > 0) {
@@ -1358,7 +1358,7 @@
             doFinalChecks();
         }
 
-        function getTotalsHours(){
+        function getTotalsHours() {
             let ttl = 0.00;
             let ttl_employees = 0;
 
