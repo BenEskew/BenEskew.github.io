@@ -83,12 +83,46 @@
                         <input onchange="javascript:document.getElementById('name_1_display').value=document.getElementById('name_1').value;" type="text" name="name_1" id="name_1" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" placeholder="Jane Doe">
                     </div>
                 </div>
+                <!-- ----- -->
+                <div class="md:flex md:items-center mb-6">
+                    <div class="md:w-1/3">
+                        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="start_time_1">Start Time:</label>
+                    </div>
+                    <div class="md:w-2/3">
+                        <input type="time" id="start_time_1" name="start_time_1">
+                    </div>
+                </div>
+                <div class="md:flex md:items-center mb-6">
+                    <div class="md:w-1/3">
+                        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="lunch_start_time_1">Lunch Out Time:</label>
+                    </div>
+                    <div class="md:w-2/3">
+                        <input type="time" id="lunch_start_time_1" name="lunch_start_time_1">
+                    </div>
+                </div>
+                <div class="md:flex md:items-center mb-6">
+                    <div class="md:w-1/3">
+                        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="lunch_end_time_1">Lunch Back Time:</label>
+                    </div>
+                    <div class="md:w-2/3">
+                        <input type="time" id="lunch_end_time_1" name="lunch_end_time_1">
+                    </div>
+                </div>
+                <div class="md:flex md:items-center mb-6">
+                    <div class="md:w-1/3">
+                        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="clock_out_time_1">Clock Out Time:</label>
+                    </div>
+                    <div class="md:w-2/3">
+                        <input type="time" id="clock_out_time_1" name="clock_out_time_1" onchange="javascript:makeTotalHours(1);">
+                    </div>
+                </div>
+                <!-- ----- -->
                 <div class="md:flex md:items-center mb-6">
                     <div class="md:w-1/3">
                         <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="total_hours_1">Hours:</label>
                     </div>
                     <div class="md:w-2/3">
-                        <input onchange="document.getElementById('total_hours_1_display').value=document.getElementById('total_hours_1').value;javascript:processTotals();" type="number" min="0" step="0.01" max="18" name="total_hours_1" id="total_hours_1" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" placeholder="7">
+                        <input onchange="document.getElementById('total_hours_1_display').value=document.getElementById('total_hours_1').value;javascript:processTotals();" type="number" min="0" step="0.01" max="18" name="total_hours_1" id="total_hours_1" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" placeholder="7" disabled>
                     </div>
                 </div>
             </div>
@@ -105,12 +139,46 @@
                         <input onchange="javascript:document.getElementById('name_2_display').value=document.getElementById('name_2').value;" type="text" name="name_2" id="name_2" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" placeholder="Jane Doe">
                     </div>
                 </div>
+                <!-- ----- -->
+                <div class="md:flex md:items-center mb-6">
+                    <div class="md:w-1/3">
+                        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="start_time_2">Start Time:</label>
+                    </div>
+                    <div class="md:w-2/3">
+                        <input type="time" id="start_time_2" name="start_time_2">
+                    </div>
+                </div>
+                <div class="md:flex md:items-center mb-6">
+                    <div class="md:w-1/3">
+                        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="lunch_start_time_2">Lunch Out Time:</label>
+                    </div>
+                    <div class="md:w-2/3">
+                        <input type="time" id="lunch_start_time_2" name="lunch_start_time_2">
+                    </div>
+                </div>
+                <div class="md:flex md:items-center mb-6">
+                    <div class="md:w-1/3">
+                        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="lunch_end_time_2">Lunch Back Time:</label>
+                    </div>
+                    <div class="md:w-2/3">
+                        <input type="time" id="lunch_end_time_2" name="lunch_end_time_2">
+                    </div>
+                </div>
+                <div class="md:flex md:items-center mb-6">
+                    <div class="md:w-1/3">
+                        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="clock_out_time_2">Clock Out Time:</label>
+                    </div>
+                    <div class="md:w-2/3">
+                        <input type="time" id="clock_out_time_2" name="clock_out_time_2" onchange="javascript:makeTotalHours(2);">
+                    </div>
+                </div>
+                <!-- ----- -->
                 <div class="md:flex md:items-center mb-6">
                     <div class="md:w-1/3">
                         <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="total_hours_2">Hours:</label>
                     </div>
                     <div class="md:w-2/3">
-                        <input onchange="javascript:document.getElementById('total_hours_2_display').value=document.getElementById('total_hours_2').value;processTotals();" type="number" min="0" step="0.01" max="18" name="total_hours_2" id="total_hours_2" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" placeholder="7">
+                        <input onchange="javascript:document.getElementById('total_hours_2_display').value=document.getElementById('total_hours_2').value;processTotals();" type="number" min="0" step="0.01" max="18" name="total_hours_2" id="total_hours_2" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" placeholder="7" disabled>
                     </div>
                 </div>
             </div>
@@ -127,12 +195,46 @@
                         <input onchange="javascript:document.getElementById('name_3_display').value=document.getElementById('name_3').value;" type="text" name="name_3" id="name_3" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" placeholder="Jane Doe">
                     </div>
                 </div>
+                <!-- ----- -->
+                <div class="md:flex md:items-center mb-6">
+                    <div class="md:w-1/3">
+                        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="start_time_3">Start Time:</label>
+                    </div>
+                    <div class="md:w-2/3">
+                        <input type="time" id="start_time_3" name="start_time_3">
+                    </div>
+                </div>
+                <div class="md:flex md:items-center mb-6">
+                    <div class="md:w-1/3">
+                        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="lunch_start_time_3">Lunch Out Time:</label>
+                    </div>
+                    <div class="md:w-2/3">
+                        <input type="time" id="lunch_start_time_3" name="lunch_start_time_3">
+                    </div>
+                </div>
+                <div class="md:flex md:items-center mb-6">
+                    <div class="md:w-1/3">
+                        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="lunch_end_time_3">Lunch Back Time:</label>
+                    </div>
+                    <div class="md:w-2/3">
+                        <input type="time" id="lunch_end_time_3" name="lunch_end_time_3">
+                    </div>
+                </div>
+                <div class="md:flex md:items-center mb-6">
+                    <div class="md:w-1/3">
+                        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="clock_out_time_3">Clock Out Time:</label>
+                    </div>
+                    <div class="md:w-2/3">
+                        <input type="time" id="clock_out_time_3" name="clock_out_time_3" onchange="javascript:makeTotalHours(3);">
+                    </div>
+                </div>
+                <!-- ----- -->
                 <div class="md:flex md:items-center mb-6">
                     <div class="md:w-1/3">
                         <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="total_hours_3">Hours:</label>
                     </div>
                     <div class="md:w-2/3">
-                        <input onchange="javascript:document.getElementById('total_hours_3_display').value=document.getElementById('total_hours_3').value;processTotals();" type="number" min="0" step="0.01" max="18" name="total_hours_3" id="total_hours_3" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" placeholder="7">
+                        <input onchange="javascript:document.getElementById('total_hours_3_display').value=document.getElementById('total_hours_3').value;processTotals();" type="number" min="0" step="0.01" max="18" name="total_hours_3" id="total_hours_3" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" placeholder="7" disabled>
                     </div>
                 </div>
             </div>
@@ -149,12 +251,46 @@
                         <input onchange="javascript:document.getElementById('name_4_display').value=document.getElementById('name_4').value;" type="text" name="name_4" id="name_4" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" placeholder="Jane Doe">
                     </div>
                 </div>
+                <!-- ----- -->
+                <div class="md:flex md:items-center mb-6">
+                    <div class="md:w-1/3">
+                        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="start_time_4">Start Time:</label>
+                    </div>
+                    <div class="md:w-2/3">
+                        <input type="time" id="start_time_4" name="start_time_4">
+                    </div>
+                </div>
+                <div class="md:flex md:items-center mb-6">
+                    <div class="md:w-1/3">
+                        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="lunch_start_time_4">Lunch Out Time:</label>
+                    </div>
+                    <div class="md:w-2/3">
+                        <input type="time" id="lunch_start_time_4" name="lunch_start_time_4">
+                    </div>
+                </div>
+                <div class="md:flex md:items-center mb-6">
+                    <div class="md:w-1/3">
+                        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="lunch_end_time_4">Lunch Back Time:</label>
+                    </div>
+                    <div class="md:w-2/3">
+                        <input type="time" id="lunch_end_time_4" name="lunch_end_time_4">
+                    </div>
+                </div>
+                <div class="md:flex md:items-center mb-6">
+                    <div class="md:w-1/3">
+                        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="clock_out_time_4">Clock Out Time:</label>
+                    </div>
+                    <div class="md:w-2/3">
+                        <input type="time" id="clock_out_time_4" name="clock_out_time_4" onchange="javascript:makeTotalHours(4);">
+                    </div>
+                </div>
+                <!-- ----- -->
                 <div class="md:flex md:items-center mb-6">
                     <div class="md:w-1/3">
                         <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="total_hours_4">Hours:</label>
                     </div>
                     <div class="md:w-2/3">
-                        <input onchange="javascript:document.getElementById('total_hours_4_display').value=document.getElementById('total_hours_4').value;processTotals();" type="number" min="0" step="0.01" max="18" name="total_hours_4" id="total_hours_4" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" placeholder="7">
+                        <input onchange="javascript:document.getElementById('total_hours_4_display').value=document.getElementById('total_hours_4').value;processTotals();" type="number" min="0" step="0.01" max="18" name="total_hours_4" id="total_hours_4" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" placeholder="7" disabled>
                     </div>
                 </div>
             </div>
@@ -171,12 +307,46 @@
                         <input onchange="javascript:document.getElementById('name_5_display').value=document.getElementById('name_5').value;" type="text" name="name_5" id="name_5" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" placeholder="Jane Doe">
                     </div>
                 </div>
+                <!-- ----- -->
+                <div class="md:flex md:items-center mb-6">
+                    <div class="md:w-1/3">
+                        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="start_time_5">Start Time:</label>
+                    </div>
+                    <div class="md:w-2/3">
+                        <input type="time" id="start_time_5" name="start_time_5">
+                    </div>
+                </div>
+                <div class="md:flex md:items-center mb-6">
+                    <div class="md:w-1/3">
+                        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="lunch_start_time_5">Lunch Out Time:</label>
+                    </div>
+                    <div class="md:w-2/3">
+                        <input type="time" id="lunch_start_time_5" name="lunch_start_time_5">
+                    </div>
+                </div>
+                <div class="md:flex md:items-center mb-6">
+                    <div class="md:w-1/3">
+                        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="lunch_end_time_5">Lunch Back Time:</label>
+                    </div>
+                    <div class="md:w-2/3">
+                        <input type="time" id="lunch_end_time_5" name="lunch_end_time_5">
+                    </div>
+                </div>
+                <div class="md:flex md:items-center mb-6">
+                    <div class="md:w-1/3">
+                        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="clock_out_time_5">Clock Out Time:</label>
+                    </div>
+                    <div class="md:w-2/3">
+                        <input type="time" id="clock_out_time_5" name="clock_out_time_5" onchange="javascript:makeTotalHours(5);">
+                    </div>
+                </div>
+                <!-- ----- -->
                 <div class="md:flex md:items-center mb-6">
                     <div class="md:w-1/3">
                         <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="total_hours_5">Hours:</label>
                     </div>
                     <div class="md:w-2/3">
-                        <input onchange="javascript:document.getElementById('total_hours_5_display').value=document.getElementById('total_hours_5').value;processTotals();" type="number" min="0" step="0.01" max="18" name="total_hours_5" id="total_hours_5" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" placeholder="7">
+                        <input onchange="javascript:document.getElementById('total_hours_5_display').value=document.getElementById('total_hours_5').value;processTotals();" type="number" min="0" step="0.01" max="18" name="total_hours_5" id="total_hours_5" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" placeholder="7" disabled>
                     </div>
                 </div>
             </div>
@@ -939,7 +1109,7 @@
                         <div class="md:w-1/3"></div>
                         <label class="md:w-2/3 block text-black-500 font-bold">
                             <input type="checkbox" class="mr-2 leading-tight">
-                            <span class="text-md">Water Carafes</span>
+                            <span class="text-md">Setup Water Carafes</span>
                         </label>
                     </div>
                     <div class="md:flex md:items-center mb-6">
@@ -960,14 +1130,14 @@
                         <div class="md:w-1/3"></div>
                         <label class="md:w-2/3 block text-black-500 font-bold">
                             <input type="checkbox" class="mr-2 leading-tight">
-                            <span class="text-md">Plates</span>
+                            <span class="text-md">Setup Plates</span>
                         </label>
                     </div>
                     <div class="md:flex md:items-center mb-6">
                         <div class="md:w-1/3"></div>
                         <label class="md:w-2/3 block text-black-500 font-bold">
                             <input type="checkbox" class="mr-2 leading-tight">
-                            <span class="text-md">Water Glasses</span>
+                            <span class="text-md">Setup Water Glasses</span>
                         </label>
                     </div>
                     <div class="md:flex md:items-center mb-6">
@@ -987,7 +1157,7 @@
                     <div class="md:flex md:items-center mb-6">
                         <div class="md:w-1/3"></div>
                         <label class="md:w-2/3 block text-black-500 font-bold">
-                            <input type="checkbox" class="mr-2 leading-tight" checked="checked">
+                            <input type="checkbox" class="mr-2 leading-tight">
                             <span class="text-md">Bring in Host Stand &amp; Signs</span>
                         </label>
                     </div>
@@ -1051,14 +1221,14 @@
                         <div class="md:w-1/3"></div>
                         <label class="md:w-2/3 block text-black-500 font-bold">
                             <input type="checkbox" class="mr-2 leading-tight">
-                            <span class="text-md">Close &amp; Lock Doors</span>
+                            <span class="text-md">Check Bathrooms</span>
                         </label>
                     </div>
                     <div class="md:flex md:items-center mb-6">
                         <div class="md:w-1/3"></div>
                         <label class="md:w-2/3 block text-black-500 font-bold">
                             <input type="checkbox" class="mr-2 leading-tight">
-                            <span class="text-md">Check Bathrooms</span>
+                            <span class="text-md">Close &amp; Lock Doors</span>
                         </label>
                     </div>
                 </form>
@@ -1110,7 +1280,7 @@
                 </form>
 
                 <div class="ml-4 text-center text-sm text-gray-500 sm:text-left sm:ml-0">
-                    Build v. 0.5.13 Benjamin S. Eskew
+                    Build v. 0.6.13 Benjamin S. Eskew
                 </div>
 
             </div>
@@ -1216,6 +1386,47 @@
                 document.getElementById('total_cc_'+rowId).value = '0.00';
                 document.getElementById('total_cash_'+rowId).value = '0.00';
             }
+        }
+
+        function makeTotalHours(rowId) {
+            //
+            let startTime = document.getElementById('start_time_'+rowId).value;
+            console.log('Start Time: '+startTime);
+            let lunchStartTime = document.getElementById('lunch_start_time_'+rowId).value;
+            console.log('Lunch Start Time: '+lunchStartTime);
+            let endLunchTime = document.getElementById('lunch_end_time_'+rowId).value;
+            console.log('Lunch End Time: '+endLunchTime);
+            let clockOutTime = document.getElementById('clock_out_time_'+rowId).value;
+            console.log('Clock Out Time: '+clockOutTime);
+            //
+            let firstHalf = theDiff(startTime, lunchStartTime);
+            console.log('First Half: '+firstHalf);
+            let lunchTime = theDiff(lunchStartTime, endLunchTime);
+            console.log('Lunch: '+lunchTime);
+            let afterTime = theDiff(endLunchTime, clockOutTime);
+            console.log('After Lunch: '+afterTime);
+            let totalTime = firstHalf + afterTime;
+            console.log('Total Time: '+totalTime);
+
+            document.getElementById('total_hours_'+rowId).value = totalTime;
+            document.getElementById('total_hours_'+rowId+'_display').value = totalTime;
+        }
+
+        function theDiff(start, end) {
+            start = start.split(":");
+            end = end.split(":");
+            let startDate = new Date(0, 0, 0, start[0], start[1], 0);
+            let endDate = new Date(0, 0, 0, end[0], end[1], 0);
+            let diff = endDate.getTime() - startDate.getTime();
+            let hours = Math.floor(diff / 1000 / 60 / 60);
+            diff -= hours * 1000 * 60 * 60;
+            let minutes = Math.floor(diff / 1000 / 60);
+
+            if (hours < 0)
+               hours = hours + 24;
+            let themins = minutes / 60;
+
+            return hours + themins;
         }
 
         function doFinalChecks() {
