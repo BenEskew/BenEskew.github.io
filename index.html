@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Benjamin S. Eskew">
+        <title>Benjamin Eskew - Web Developer / Software Engineer (Los Angeles, CA)</title>
+        <script src="https://kit.fontawesome.com/e97fd945d7.js" crossorigin="anonymous"></script>
+        <link href="./build.css" rel="stylesheet">
+        <!-- favicon generated from https://favicon.io/favicon-generator/ -->
+        <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+        <link rel="manifest" href="./site.webmanifest">
+        <!-- [END] favicon generated from https://favicon.io/favicon-generator/ [END] -->
+        <script src="//unpkg.com/alpinejs" defer></script>
+    </head>
+    <body class="font-sans antialiased">
+        <div id="app" x-data="{ openExperience: true, openSkills: true, openPortfolio: true }" class="container p-4">
+            <div class="flex">
+                <div class="flex-none relative">
+                    <img src="./assets/img/logo.jpg" alt="Benjamin Eskew (Web Engineer)" class="rounded-full">
+                </div>
+                <div class="flex-auto p-6">
+                    <div class="flex flex-wrap">
+                        <h1 class="flex-auto text-5xl font-bold text-slate-600">Benjamin Eskew</h1>
+                        <div class="w-full flex-none text-lg font-medium text-slate-700 mt-2">Web Developer / Software Engineer</div>
+                        <div class="w-full flex-none p-2 mt-2">
+                            <a href="https://www.linkedin.com/in/beneskew/" target="_blank"><span class="btn btn-secondary"><i class="fab fa-linkedin"></i> LinkedIn</span></a>
+                            <a href="https://wellfound.com/u/beneskew?referrer_code=e6c577c3-f356-541f-8514-28b67d3a1d1a" target="_blank"><span class="btn btn-secondary">Wellfound</span></a>
+                        </div>
+                        <div class="w-full flex-none text-md font-normal mt-6">
+                            <i><span class="font-extrabold text-3xl">"</span>I am a Web Developer with 17+ years of professional experience in all aspects of web development and programming; including information design, interface development, and integrating frontend views with backend technologies in an elegant fashion.<br />I am currently seeking a full-time career.<span class="font-extrabold text-3xl">"</span></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="font-sans p-8">
+                <div class="w-full">
+                    <h2 class="text-3xl font-bold text-slate-600"><span @click="openExperience = ! openExperience;toggleButton('experienceToggle');">Experience <i id="experienceToggle" class="fa fa-toggle-on"></i></span></h2>
+                </div>
+                <div id="experience_content" class="w-full mt-2" x-show="openExperience">
+                    <div class="experience">
+                        <h3 class="font-extrabold bg-slate-300 text-slate-900 p-2 text-lg rounded-xl">Freelance <small class="ml-4">(2008 - present)</small></h3>
+                        <div class="p-2 text-slate-950">
+                            Los Angeles, CA - Web Developer
+                        </div>
+                        <div class="text-slate-950 font-light p-2">
+                            Lead the development of several travel-based web-services for myself and created many travel-related web service integration's with various 3rd party services.<br />The Laravel framework has been the primary MVC environment being developed with the LEMP stack (Linux, Nginx, MySQL, PHP). Frontend technologies include (definitely not limited to) TailwindCSS, Bootstrap, Webpack, ES6, HTML5 and much more.<br />Also, have worked on many contract-based projects for other companies.
+                        </div>
+                    </div>
+
+                    <div class="experience mt-2">
+                        <h3 class="font-extrabold bg-slate-300 text-slate-900 p-2 text-lg rounded-xl">Sunrise Integration <small class="ml-4">(Aug. 2016 - Jun. 2017)</small></h3>
+                        <div class="p-2 text-slate-950">
+                            Hollywood, CA - Web Engineer
+                        </div>
+                        <div class="text-slate-950 font-light p-2">
+                            Lead the development of many ecommerce-based projects. (Shopify, Magento, custom) Developed Shopify e-commerce projects using the Shopify platform (Liquid templates and also custom Shopify apps).<br />Educated the entire development team about “new” technologies, including Laravel, Composer, Vagrant, Git, Vue.js, Redis, Node.js, PhoneGap, and various Unix/Linux command-line applications.
+                        </div>
+                    </div>
+
+                    <div class="experience mt-2">
+                        <h3 class="font-extrabold bg-slate-300 text-slate-900 p-2 text-lg rounded-xl">PowerHouse Creative, LLC <small class="ml-4">(Feb. 2013 - Nov. 2013)</small></h3>
+                        <div class="p-2 text-slate-950">
+                            Hollywood, CA - Senior Developer
+                        </div>
+                        <div class="text-slate-950 font-light p-2">
+                            Lead the management and production of projects and custom MVC software solutions for fortune 500 and other various companies and corporations.<br />Technologies utilized here range from LAMP stack builds in the cloud (AWS; RackSpace; DigitalOcean) to simple configurations, depending on the requirements of the client.
+                        </div>
+                    </div>
+
+                    <div class="experience mt-2">
+                        <h3 class="font-extrabold bg-slate-300 text-slate-900 p-2 text-lg rounded-xl">trueRSVP, Inc.(<a href="https://gust.com/companies/planana" target="_blank">Planana</a>) <small class="ml-4">(May 2012 - Sept. 2012)</small></h3>
+                        <div class="p-2 text-slate-950">
+                            Hollywood, CA - Lead Developer
+                        </div>
+                        <div class="text-slate-950 font-light p-2">
+                            Lead the management and production of projects and custom web software development. Managed an out-sourced team of web developers and learned the ins-and-outs of “start-up” business development. Also, was involved in “pitching” the business to investors and agencies.<br />The LAMP stack was utilized here and a custom framework was developed for the web-services.
+                        </div>
+                    </div>
+
+                    <div class="experience mt-2">
+                        <h3 class="font-extrabold bg-slate-300 text-slate-900 p-2 text-lg rounded-xl">Protex Safe Co <small class="ml-4">(Jan. 2011 - Mar. 2012)</small></h3>
+                        <div class="p-2 text-slate-950">
+                            Canoga Park, CA - Senior Software Engineer
+                        </div>
+                        <div class="text-slate-950 font-light p-2">
+                            Lead the management and production of several web projects, requiring a small development team, one designer, and a quality assurance engineer.<br />The LAMP stack was used here. Magento; RackSpace Cloud;
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="font-sans p-8">
+                <div class="w-full">
+                    <h2 class="text-3xl font-bold text-slate-600"><span @click="openSkills = ! openSkills;toggleButton('skillsToggle');">Skills <i id="skillsToggle" class="fa fa-toggle-on"></i></span></h2>
+                </div>
+                <div id="skills_content" x-show="openSkills">
+                    <div class="skill mt-2 pt-3">
+                        <div>
+                            <a href="https://www.php.net/" target="_blank"><span class="btn btn-primary"><i class="fab fa-php"></i> PHP 5-8</span></a>
+                        </div>
+                        <div class="ml-2 p-2">
+                            I've been creating magic with PHP for over fifteen years and still going strong. 
+                        </div>
+                    </div>
+                    <div class="skill mt-2 pt-3">
+                        <div>
+                            <a href="https://laravel.com/" target="_blank"><span class="btn btn-primary"><i class="fab fa-laravel"></i> Laravel 1-11</span></a>
+                        </div>
+                        <div class="ml-2 p-2">
+                            Laravel has been a major focus of my development since its inception. From basic personal sites, business APIs, e-commerce systems, to enterprise applications for Fortune 500 companies.
+                        </div>
+                    </div>
+
+                    <div class="w-full mt-2 pt-3">
+                        <a href="https://herd.laravel.com/" target="_blank"><span class="btn btn-secondary"><i class="fab fa-laravel"></i> Laravel Herd</span></a>
+                        <a href="https://symfony.com/" target="_blank"><span class="btn btn-secondary"><i class="fab fa-symfony"></i> Symfony</span></a>
+                        <a href="https://laravel.com/docs/master/homestead" target="_blank"><span class="btn btn-secondary"><i class="fab fa-laravel"></i> Homestead</span></a>
+                        <a href="https://www.vagrantup.com/" target="_blank"><span class="btn btn-secondary">Vagrant</span></a>
+                        <a href="https://getcomposer.org/" target="_blank"><span class="btn btn-secondary">Composer</span></a>
+                    </div>
+
+                    <div class="skill mt-2 pt-3">
+                        <div class="mt-2">
+                            <span class="btn btn-primary">Software Versioning</span>
+                        </div>
+                        <div class="ml-2 p-2">
+                            Code versioning isn't simply a tool used for teamwork, it's essential for keeping track of the history of information. Versioning has been a tool used by Humans for thousands of years.
+                        </div>
+                    </div>
+
+                    <div class="w-full mt-2 pt-3">
+                        <a href="https://git-scm.com/" target="_blank"><span class="btn btn-secondary"><i class="fab fa-git"></i> Git</span></a>
+                        <a href="https://bitbucket.org/" target="_blank"><span class="btn btn-secondary"><i class="fab fa-bitbucket"></i> BitBucket</span></a>
+                    </div>
+
+                    <div class="skill mt-2 pt-3">
+                        <div class="mt-2">
+                            <a href="https://www.javascript.com/" target="_blank"><span class="btn btn-primary">JavaScript</span></a>
+                        </div>
+                        <div class="ml-2 p-2">
+                            JavaScript has been an essential tool for me for over twenty years and continues to surprise me as time goes on.
+                        </div>
+                    </div>
+
+                    <div class="w-full mt-2 pt-3">
+                        <a href="https://nodejs.org/" target="_blank"><span class="btn btn-secondary"><i class="fab fa-node"></i> Node.js</span></a>
+                        <a href="https://vuejs.org/" target="_blank"><span class="btn btn-secondary"><i class="fab fa-vuejs"></i> Vue.js</span></a>
+                        <a href="https://inertiajs.com/" target="_blank"><span class="btn btn-secondary">Inertia.js</span></a>
+                        <a href="https://www.sencha.com/products/extjs/" target="_blank"><span class="btn btn-secondary">Ext JS</span></a>
+                        <a href="https://alpinejs.dev/" target="_blank"><span class="btn btn-secondary">Alpine.js</span></a>
+                        <a href="https://www.npmjs.com/" target="_blank"><span class="btn btn-secondary"><i class="fab fa-npm"></i> npm</span></a>
+                    </div>
+
+                    <div class="skill mt-2 pt-3">
+                        <div class="mt-2">
+                            <a href="#" target="_blank"><span class="btn btn-primary">Cascading Style Sheets</span></a>
+                        </div>
+                        <div class="ml-2 p-2">
+                            I'm not the greatest web designer by any stretch but being able to write code to create designs is a strong suit of mine.
+                        </div>
+                    </div>
+
+                    <div class="w-full mt-2 pt-3">
+                        <a href="https://tailwindcss.com/" target="_blank"><span class="btn btn-secondary">Tailwind CSS</span></a>
+                        <a href="https://getbootstrap.com/" target="_blank"><span class="btn btn-secondary">Bootstrap</span></a>
+                        <a href="https://bulma.io/" target="_blank"><span class="btn btn-secondary">Bulma</span></a>
+                    </div>
+
+                    <div class="skill mt-2 pt-3">
+                        <div class="mt-2">
+                            <a href="#" target="_blank"><span class="btn btn-primary">Databasing</span></a>
+                        </div>
+                        <div class="ml-2 p-2">
+                            Throughout my professional career I've mainly been a back-end web developer and utilizing databases is key to creating "sticky" web services and websites.
+                        </div>
+                    </div>
+
+                    <div class="w-full mt-2 pt-3">
+                        <a href="https://www.mysql.com/" target="_blank"><span class="btn btn-secondary">MySQL</span></a>
+                        <a href="https://www.postgresql.org/" target="_blank"><span class="btn btn-secondary">PostgreSQL</span></a>
+                        <span class="btn btn-secondary">MS SQL</span>
+                        <span class="btn btn-secondary">NoSQL</span>
+                    </div>
+
+                    <div class="skill mt-2 pt-3">
+                        <div class="mt-2">
+                            <a href="#" target="_blank"><span class="btn btn-primary">Cloud Computing</span></a>
+                        </div>
+                        <div class="ml-2 p-2">
+                            I've been utilizing cloud computing technologies since their inception. By coming from a traditional history of solo-computing to handle web infrastructure it gives me advantages in understanding system architecture on a per project basis, as sometimes understanding that cloud computing is simply over-kill, or the only option.
+                        </div>
+                    </div>
+
+                    <div class="w-full mt-2 pt-3">
+                        <span class="btn btn-secondary"><i class="fab fa-aws"></i> Amazon Web Services</span>
+                        <a href="https://m.do.co/c/9f5e3c123ef4" target="_blank"><span class="btn btn-secondary"><i class="fab fa-digital-ocean"></i> Digital Ocean</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="font-sans p-8">
+                <div class="w-full">
+                    <h2 class="text-3xl font-bold text-slate-600"><span>Portfolio</span></h2>
+                </div>
+                <div id="portfolio_content" x-show="openPortfolio" class="content-center">
+                    <div class="flex">
+                        <div class="flex-inline w-full p-2">
+                            <a href="https://sunriseintegration.com/warehouse-connector/" target="_blank"><img src="assets/img/portfolio/warehouseconnector.png" class="img-thumbnail" width="300"><h5>Warehouse Connector<br>2016-2017</h5></a>
+                        </div>
+                        <div class="flex-inline w-full p-2">
+                            <a href="https://apidataservice.com/" target="_blank"><img src="assets/img/portfolio/apidataservice.png" class="img-thumbnail" width="300"><h5>API DataService<br>2016-2017</h5></a>
+                        </div>
+                        <div class="flex-inline w-full p-2">
+                            <a href="https://gust.com/companies/planana" target="_blank"><img src="assets/img/portfolio/planana.png" class="img-thumbnail" width="300"><h5>Planana<br>2012</h5></a>
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <div class="flex-inline w-full p-2">
+                            <img src="assets/img/portfolio/hyundailiveevent.jpg" class="img-thumbnail" width="300"><h5>Hyundai LIVE<br>2013</h5>
+                        </div>
+                        <div class="flex-inline w-full p-2">
+                            <a href="https://www.babyjogger.com/" target="_blank"><img src="assets/img/portfolio/babyjogger.jpg" class="img-thumbnail" width="300"><h5>Babyjogger<br>2013</h5></a>
+                        </div>
+                        <div class="flex-inline w-full p-2">
+                            <img src="assets/img/portfolio/jumpjet.jpg" class="img-thumbnail" width="300"><h5>Jumpjet<br>2013</h5>
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <div class="flex-inline w-full p-2">
+                            <img src="assets/img/portfolio/laughroulette.jpg" class="img-thumbnail" width="300"><h5>Laugh Roulette<br>2013</h5>
+                        </div>
+                        <div class="flex-inline w-full p-2">
+                            <a href="https://www.buyasafe.com/" target="_blank"><img src="assets/img/portfolio/buyasafe.jpg" class="img-thumbnail" width="300"><h5>Buy a Safe<br>2012</h5></a>
+                        </div>
+                        <div class="flex-inline w-full p-2">
+                            <img src="assets/img/portfolio/dealsonautosales.jpg" class="img-thumbnail" width="300"><h5>Deals on Auto Sales<br>2013</h5>
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <div class="flex-inline w-full p-2">
+                            <img src="assets/img/portfolio/luxmo.jpg" class="img-thumbnail" width="300"><h5>Luxmo<br>2010-2011</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function toggleButton(idName) {
+                let btn = document.getElementById(idName);
+
+                if (btn.className == 'fa fa-toggle-on') {
+                    btn.classList.remove('fa-toggle-on');
+                    btn.classList.add('fa-toggle-off');
+                } else {
+                    btn.classList.remove('fa-toggle-off');
+                    btn.classList.add('fa-toggle-on');
+                }
+            }
+        </script>
+    </body>
+</html>
